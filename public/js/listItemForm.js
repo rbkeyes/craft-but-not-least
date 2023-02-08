@@ -6,8 +6,10 @@ const listItemFormHandler = async (event) => {
     const itemName = document.getElementById('item-name').value.trim();
     const description = document.getElementById('description').value.trim();
     const listPrice = document.getElementById('list-price').value.trim();
+    // not 100% sure what we'll need for for the photo upload, adding this for now but can edit later as needed
+    const photoUpload = document.getElementById('photo-upload');
     // there will be multiple tags, want to get all of them
-    const tag = document.querySelectorAll('#tag')
+    const tag = document.querySelectorAll('#tag');
     
     if (email && password) {
       // Send the e-mail and password to the server
