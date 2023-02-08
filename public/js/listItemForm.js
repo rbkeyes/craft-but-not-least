@@ -6,7 +6,8 @@ const listItemFormHandler = async (event) => {
     const itemName = document.getElementById('item-name').value.trim();
     const description = document.getElementById('description').value.trim();
     const listPrice = document.getElementById('list-price').value.trim();
-    
+    // there will be multiple tags, want to get all of them
+    const tag = document.querySelectorAll('#tag')
     
     if (email && password) {
       // Send the e-mail and password to the server
