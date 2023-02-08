@@ -27,7 +27,11 @@
     <!-- tag checkboxes -->
     <div class="form-group">
         <label for="tags">Tags:</label>
-    
+        <!-- add checkboxes with tags from partial -->
+        {{#each tags as |tag|}}
+        {{> listItemForm}}
+        {{/each}}
+
     </div>
 
     <!-- submit button -->

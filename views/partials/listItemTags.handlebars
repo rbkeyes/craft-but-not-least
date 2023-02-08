@@ -1,12 +1,7 @@
-<!-- loop through each tag in tags -->
-{{#each tags as |tag|}}
-
+    <!-- checkbox with tag name -->
     <div class="form-check">
         <input type="checkbox" class="form-check-input" id="{{tag.name}}">
         <label class="form-check-label" for="{{tag.name}}">{{tag.name}}</label>
-    </div>
-
-{{/each}}
-        
+    </div>        
 {{!-- for future development: allow user to input additional tags and save to db --}}
-{{!-- any added tags will be dynamically generated to the form --}}
+{{!-- any added tags would be dynamically created and rendered to the form --}}
