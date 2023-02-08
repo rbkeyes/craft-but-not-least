@@ -3,10 +3,11 @@ const listItemFormHandler = async (event) => {
     event.preventDefault();
   
     // Gather the data from the form elements on the page
-    const itemName = document.querySelector('#item-name').value.trim();
-    const description = document.querySelector('#description').value.trim();
+    const itemName = document.getElementById('item-name').value.trim();
+    const description = document.getElementById('description').value.trim();
+    const listPrice = document.getElementById('list-price').value.trim();
     
-  
+    
     if (email && password) {
       // Send the e-mail and password to the server
       const response = await fetch('/api/users/login', {
