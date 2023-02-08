@@ -14,7 +14,12 @@ const listItemFormHandler = async (event) => {
   // ⚛︎✧⚙︎※☸︎❂✛⚙︎☄︎✢☺︎▵♥︎➣☼ 
   // there will be multiple tags, want to get all of them
   // ⚛︎✧⚙︎※☸︎❂✛⚙︎☄︎✢☺︎▵♥︎➣☼
-  const tag = document.querySelectorAll('#tag');
+  const checkbox = document.querySelectorAll('#checkbox');
+  const tagName = document.querySelectorAll('#tag-name');
+
+  // ⚛︎✧⚙︎※☸︎❂✛⚙︎☄︎✢☺︎▵♥︎➣☼ 
+  // just realized I'll need to add code to register the checkboxes & get the associated tags.
+  // ⚛︎✧⚙︎※☸︎❂✛⚙︎☄︎✢☺︎▵♥︎➣☼ 
 
   if (itemName && description && listPrice && tag) { 
     // ⚛︎✧⚙︎※☸︎❂✛⚙︎☄︎✢☺︎▵♥︎➣☼add photoUpload when ready
