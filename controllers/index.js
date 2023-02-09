@@ -1,16 +1,8 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require('express').Router();
-
-// ⚠️ Import all of the API routes from /api/index.js
 const apiRoutes = require('./api');
-const homeRoutes = require('./homeRoutes');
-const productRoutes = require('./productRoutes');
-const sellProductRoutes = require('./sellProductRoutes');
 
 router.use('/api', apiRoutes);
-router.use('/', homeRoutes);
-router.use('/products', productRoutes);
-router.use('/sell', sellProductRoutes);
 
 router.use((req, res) => {
     res.status(404).end();
