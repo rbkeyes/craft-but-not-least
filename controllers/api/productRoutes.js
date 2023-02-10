@@ -2,7 +2,7 @@
 // for user to buy products and contact seller
 const router = require('express').Router();
 const { Product, User, Tag } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../utils');
 
 // get all products
 router.get('/', async (req, res) => {
@@ -20,7 +20,9 @@ router.get('/', async (req, res) => {
             ],
         });
         const products = productData.map((product) => product.get({ plain: true }));
-        res.render('all-products', { products, logged_in: req.session.logged_in });
+        res.json(products);
+        // ⚠️ to run the server needs to comment out this below first, after finished loggin session comment back ⚠️
+        // res.render('all-products', { products, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -74,7 +76,8 @@ router.get('/tag/:id', async (req, res) => {
 });
 
 // ==========⚠️NOT SURE if working=========== contact seller
-router.post('/contact/:id', withAuth, async (req, res) => {
+router.post('/contact/:id', async (req, res) => {
+// router.post('/contact/:id', withAuth, async (req, res) => {
     try {
         const newContact = await Contact.create({
             ...req.body,
