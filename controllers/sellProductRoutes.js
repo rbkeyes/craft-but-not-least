@@ -2,7 +2,7 @@
 // for user to listing and sell products
 const router = require("express").Router();
 const { Product, User, Tag } = require("../models");
-const withAuth = require("../utils");
+// const withAuth = require("../utils");
 
 // get all products by user id
 router.get("/user/:id", async (req, res) => {
@@ -30,7 +30,8 @@ router.get("/user/:id", async (req, res) => {
 });
 
 // create a new product to sell
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
+// router.post("/", withAuth, async (req, res) => {
   try {
     const newProduct = await Product.create({
       ...req.body,
@@ -43,7 +44,8 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 // update a product by product id
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
+// router.put("/:id", withAuth, async (req, res) => {
   try {
     Product.update(
       {
@@ -65,7 +67,8 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 // ======⚠️Not discussed yet======== delete a product by id ⚠️
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
+// router.delete("/:id", withAuth, async (req, res) => {
   try {
     const productData = await Product.destroy({
       where: {
