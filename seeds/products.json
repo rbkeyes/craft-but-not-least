@@ -4,60 +4,60 @@
         "product_description": "Hand-dyed self-striping sock yarn in rainbow colors. 75/25 merino wool/nylon. 460 yds/100g.",
         "product_price": 36,
         "product_tag": 1,
-        // "user_id": 1 
+        "user_id": 1 
     }, {
         "product_name": "crochet hooks",
         "product_description": "Belonged to my grandmother, still in great shape! I think they're aluminum. Sizes D-3, E-4, F-5, G-6, H-8.",
         "product_price": 6,
         "product_tag": 2,
-        // "user_id": 1 
+        "user_id": 1 
     }, {
         "product_name": "bead soup",
         "product_description": "1/2 pound (8 ounces) of mixed beads. All sizes. Mixed materials.",
         "product_price": 3.50,
         "product_tag": 3,
-        // "user_id": 5 
+        "user_id": 5 
     }, {
         "product_name": "sequin fabric",
         "product_description": "There's about 3 yards of this sparkly sequin fabric! Perfect for costumes.",
         "product_price": 15,
         "product_tag": 4,
-        // "user_id": 3 
+        "user_id": 3 
     }, {
         "product_name": "peg loom",
         "product_description": "It's a peg loom. You weave things on it.It's big enough to make a small rug/mat.",
         "product_price": 40,
         "product_tag": 5,
-        // "user_id": 2 
+        "user_id": 2 
     }, {
         "product_name": "mini pottery wheel",
         "product_description": "It was a gift but I don't have room to keep it. Works great, pretty much brand new!",
         "product_price": 79.99,
         "product_tag": 6,
-        // "user_id": 4
+        "user_id": 4
     }, {
         "product_name": "macrame cord",
         "product_description": "Plain white macrame cord. I already used some, there's about 200 yards left.",
         "product_price": 11,
         "product_tag": 7,
-        // "user_id": 5
+        "user_id": 5
     }, {
         "product_name": "origami paper",
         "product_description": "Origami paper in a bunch of different sizes and colors. Not sure how many sheets are left but it looks like there's a lot",
         "product_price": 4.25,
         "product_tag": 8,
-        // "user_id": 2 
+        "user_id": 2 
     }, {
         "product_name": "drop spindle",
         "product_description": "Good beginner drop spindle.",
         "product_price": 12,
         "product_tag": 9,
-        // "user_id": 1
+        "user_id": 1
     }, {
         "product_name": "pompoms and pipe cleaners",
         "product_description": "A gallon ziplock bag full of multicolored pompoms, pipe cleaners, and probably a few sequins and buttons mixed in.",
         "product_price": 5,
         "product_tag": 10,
-        // "user_id": 2 
+        "user_id": 2 
     }
 ]
