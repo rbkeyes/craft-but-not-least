@@ -1,16 +1,29 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
-const sequelize = require('../config/connection');
-const { Product } = require('../models');
+const sequelize = require("../config/connection");
+const { User } = require("../models");
+const { Product } = require("../models");
+const { Tag } = require("../models");
 
-const productData = require('./productData.json');
-const userData = require('./userData.json');
+// =====⚠️ TODO: Check file name if matches ⚠️======
+const userData = require("./users.json");
+const productData = require("./products.json");
+const tagData = require("./tags.json");
 
-// === not finished yet ===
-// seed database with product and user data
+// seed database for user, product, tag
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+  await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
   await Product.bulkCreate(productData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Tag.bulkCreate(tagData, {
     individualHooks: true,
     returning: true,
   });
