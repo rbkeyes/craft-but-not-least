@@ -1,14 +1,16 @@
+// ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const sequelize = require('../config/connection');
-//  ========⤵️ User can be changed later ===== 
-const { User } = require('../models');
+const { Product } = require('../models');
 
 const productData = require('./productData.json');
+const userData = require('./userData.json');
 
+// === not finished yet ===
+// seed database with product and user data
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  //  ========⤵️ User can be changed later ===== 
-  await User.bulkCreate(productData, {
+  await Product.bulkCreate(productData, {
     individualHooks: true,
     returning: true,
   });
@@ -17,3 +19,5 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+// ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
