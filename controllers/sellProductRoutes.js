@@ -1,8 +1,8 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 // for user to listing and sell products
 const router = require("express").Router();
-const { Product, User, Tag } = require("../../models");
-const withAuth = require("../../utils/auth");
+const { Product, User, Tag } = require("../models");
+const withAuth = require("../utils");
 
 // get all products by user id
 router.get("/user/:id", async (req, res) => {
