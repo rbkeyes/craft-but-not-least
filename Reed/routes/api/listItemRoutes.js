@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Tags } = require('../../models');
+const { Tags } = require('../../../models');
 
 // 🧶 get tag names and render to listItemTags.handlebars
 router.get('/', async (req, res) => {
