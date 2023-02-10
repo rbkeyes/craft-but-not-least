@@ -1,10 +1,7 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const sequelize = require("../config/connection");
-const { User } = require("../models");
-const { Product } = require("../models");
-const { Tag } = require("../models");
+const { User, Product, Tag } = require("../models");
 
-// =====⚠️ TODO: Check file name if matches ⚠️======
 const userData = require("./users.json");
 const productData = require("./products.json");
 const tagData = require("./tags.json");
