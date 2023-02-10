@@ -3,6 +3,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const path = require('path');
+// update to index once everything is working properly
 const router = require('./controllers/rbroutes')
 
 // Sets up the Express App
