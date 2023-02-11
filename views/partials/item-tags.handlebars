@@ -1,9 +1,9 @@
     <!-- checkbox with tag name -->
     <div class="form-check">
-        {{#with tag}}
-        <input type="checkbox" class="form-check-input" id="{{name}}">
-        <label class="form-check-label tag-name" for="tag-name">{{{name}}}</label>
-        {{/with}}
+        {{!-- {{#with tag}} --}}
+        <input type="checkbox" class="form-check-input" id="{{tag}}">
+        <label class="form-check-label tag-name" for="{{tag}}">{{{tag}}}</label>
+        {{!-- {{/with}} --}}
     </div>        
 {{!-- for future development: allow user to input additional tags and save to db --}}
 {{!-- any added tags would be dynamically created and rendered to the form --}}
