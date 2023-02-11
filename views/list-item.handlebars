@@ -1,5 +1,3 @@
-<!-- ⌾ ▶︎〈〈〈 ◀︎ ⌾ Reed ⌾ ▶︎ 〉〉〉◀︎ ⌾ -->
-
 <h2>Add an item</h2>
 <!-- item name input -->
 <form class="form submit-form" id="list-item-form">
@@ -29,7 +27,7 @@
         <label for="tags">Tags:</label>
         <!-- add checkboxes with tags from partial -->
         {{#each tags as |tag|}}
-        {{> listItemForm}}
+        {{> item-tags}}
         {{/each}}
 
     </div>
