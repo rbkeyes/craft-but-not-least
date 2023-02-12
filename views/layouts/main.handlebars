@@ -4,21 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
+  <title>Buy Sell Exchange Craft Supplies</title>
   <link rel="stylesheet" href="/css/jass.css">
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      Craft Exchange
+      Craft But Not Least
     </h1>
     <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
+    {{!-- updating title, header and nav - WINSTON --}}
     <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
+      <a href="/">Home</a>
+      <a href="/">Buy</a>
+      <a href="/">Sell</a>
+    {{#if logged_in}}
+    <button class="btn" id="logout">logout</button>
+    {{else}}
+    <button class="btn" id="login">login</button>
     {{/if}}
+    {{!-- <a href="/login">Login</a>
+    {{/if}} --}}
+    </nav>
+    
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
