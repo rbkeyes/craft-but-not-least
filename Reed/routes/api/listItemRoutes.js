@@ -28,8 +28,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-// 🧶 post new item to db
-// 🧶 are we adding a withAuth helper for login?
+// post new item to db
+// are we adding a withAuth helper for login?
 router.post('/', withAuth, async (req,res) => {
     try {
         const newItem = await Item.create({
