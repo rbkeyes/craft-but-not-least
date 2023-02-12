@@ -2,8 +2,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});// const routes = require('./controllers');
-const routes = require('./controllers/rbroutes')
+// rb: added hbs below
+const hbs = exphbs.create({});
+// const routes = require('./controllers');
+const routes = require('./controllers')
 // const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -28,6 +30,7 @@ const sess = {
 // Add express-session and store as Express.js middleware
 app.use(session(sess));
 
+// rb: uncommented app.engine below
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
