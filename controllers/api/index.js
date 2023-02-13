@@ -1,7 +1,7 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require('express').Router();
 // ⚠️ Import all of the API routes from /api/index.js
-const homeRoutes = require('../homeRoutes');
+const homeRoutes = require('./profileRoutes');
 const productRoutes = require('./productRoutes');
 const sellProductRoutes = require('../sellProductRoutes');
 
