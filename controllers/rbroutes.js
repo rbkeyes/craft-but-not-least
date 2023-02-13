@@ -79,7 +79,7 @@ router.get('/products', async (req, res) => {
 });
 
 router.get('/login', async (req, res) => {
-    res.render('rbhome');
+    res.render('login');
 });
 
 
