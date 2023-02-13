@@ -5,8 +5,9 @@
 const router = require('express').Router();
 const homeRoutes = require('');
 
+// get route to render homepage (be sure to name handlebars template "homepage" in order to render);
 router.get('/', async (req, res) => {
-    res.render('homeRoutes');
+    res.render('homepage');
 });
 
 
