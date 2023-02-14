@@ -21,13 +21,14 @@
       <a href="/">Home</a>
       <a href="/">Buy</a>
       <a href="/">Sell</a>
-    {{#if logged_in}}
+    {{!-- {{#if logged_in}}
     <button class="btn" id="logout">Logout</button>
     {{else}}
     <button class="btn" id="login">Login</button>
-    {{/if}}
+    {{/if}} --}}
     {{!-- <a href="/login">Login</a>
     {{/if}} --}}
+    <button class="btn" id="logout">Logout</button>
     </nav>
     
   </header>
@@ -39,9 +40,12 @@
   </footer>
 
   <!-- Only include the logout script if the user is logged in -->
-  {{#if logged_in}}
+  {{!-- {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  {{/if}}
+  {{/if}} --}}
+  {{!-- **rb** not sure why the if logged_in isn't working but commenting out for now --}}
+    <script src="/js/logout.js"></script>
+
 </body>
 
 </html>
