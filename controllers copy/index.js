@@ -1,9 +1,9 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require('express').Router();
 const apiRoutes = require('./api');
-// const rbroutes = require('./rbroutes');
+const rbroutes = require('./rbroutes');
 
-// router.use('/', rbroutes);
+router.use('/', rbroutes);
 router.use('/api', apiRoutes);
 
 
