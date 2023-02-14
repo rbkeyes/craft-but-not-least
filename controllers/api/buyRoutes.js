@@ -119,6 +119,7 @@ router.get('/tag/:id', async (req, res) => { //⭐️TODO: add withAuth once log
 //     }
 // });
 
+// TODO: get user email by user id as user want to contact a seller
 
 module.exports = router;
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
