@@ -36,16 +36,24 @@ router.get('/list-item', async (req, res) => {
     }
 });
 
-// router.post('./list-item', async (req, res) => {
-//     try {
-//         const newItem = await Product.create({
-//             product_name: req.body.itemName,
-//             product_description: req.body.})
-//     } catch (err) {
-//         console.err(err);
-//         res.status(400).json(err);
-//     }
-// });
+router.post('/list-item', async (req, res) => {
+    try {
+        const newItem = await Product.create({
+            product_name: req.body.product_name,
+            product_description: req.body.product_description,
+            product_price: req.body.product_price,
+            product_tag: req.body.product_tag,    
+            // user id & email: get from session?
+        });
+        if (!newItem) {
+            res.json("Unable to add item.");
+        }
+        res.status(202).json(newItem);
+    } catch (err) {
+        console.err(err);
+        res.status(400).json(err);
+    }
+});
 
 router.get('/products', async (req, res) => {
     try {

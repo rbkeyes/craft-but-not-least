@@ -17,14 +17,15 @@ const listItemFormHandler = async (event) => {
   if (itemName && description && listPrice && checkbox) { 
     // add photoUpload when ready
     // Send the item data to the server
-    const response = await fetch('/api/users/listItem', {
+    const response = await fetch('/list-item', {
       method: 'POST',
       body: JSON.stringify({ itemName, description, listPrice, checkbox }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      console.log('Success!')
+      // document.location.replace('/');
       // route to ?? page after POST
       return;
     } else {
