@@ -30,7 +30,7 @@ router.get("/login", (req, res) => {
 
   // res.render("login");
   // **rb** temp login route added below for use until custom login is done **rb**
-  res.render("temp-login");
+  res.render("login");
 });
 
 
