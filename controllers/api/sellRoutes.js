@@ -5,7 +5,7 @@ const { Product} = require("../../models");
 // const withAuth = require("../utils");
 
 // ⤵️============ ✅tested with json object input: 200 ok =================
-// create a new product to sell
+// create a new product to sell ((localhost:3001/api/sell)
 router.post("/", async (req, res) => { // TODO: add withAuth
 // router.post("/", withAuth, async (req, res) => {
   try {
