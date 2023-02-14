@@ -23,14 +23,14 @@ router.get("/", async (req, res) => { // TODO: add withAuth
 });
 
 router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/");
-    return;
-  }
+  // if (req.session.logged_in) {
+  //   res.redirect("/");
+  //   return;
+  // }
 
   // res.render("login");
   // **rb** temp login route added below for use until custom login is done **rb**
-  res.render("login");
+  res.render("temp-login");
 });
 
 
