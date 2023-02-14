@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User, Product, Tag } = require('../models');
 
-// GET route for getting all of the dishes that are on the menu
 router.get('/', async (req, res) => {
     res.render('rbhome');
 });

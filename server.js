@@ -14,8 +14,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// const hbs = exphbs.create({ helpers });
-
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -29,9 +27,9 @@ const sess = {
 // Add express-session and store as Express.js middleware
 app.use(session(sess));
 
-// rb: uncommented app.engine below
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+// 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
