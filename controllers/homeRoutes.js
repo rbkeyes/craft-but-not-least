@@ -1,28 +1,33 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
-// ====== to be discussed =======    
-// for user profile page, includes user info, user's products, user's orders after login
+const router = require("express").Router();
+const { User } = require("../models");
+// const withAuth = require("../utils/withAuth");
 
-const router = require('express').Router();
-const { User, Product, Tag } = require('../models');
-// const homeRoutes = require('');
+router.get("/", async (req, res) => { // TODO: add withAuth
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ["password"] },
+      order: [["name", "ASC"]],
+    });
+    const users = userData.map((user) => user.get({ plain: true }));
 
-// get route to render homepage (be sure to name handlebars template "homepage" in order to render);
-router.get('/', async (req, res) => {
-    res.render('homepage');
+    res.render("homepage", {
+      users,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-module.exports = router;
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
 
-
-
-
-
-
-
-
-
-
-
+  res.render("login");
+});
 
 
 module.exports = router;

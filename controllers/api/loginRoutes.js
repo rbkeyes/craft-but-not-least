@@ -1,7 +1,8 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require('express').Router();
-const { User, Product, Tag, ProductTag } = require('../../models');
+const { User } = require('../../models');
 
+// ⤵️ ========test result: 
 // user login with email and password
 router.post('/login', async (req, res) => {
     try {
@@ -31,6 +32,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// ⤵️ ========test result: 
 // user logout
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
@@ -42,6 +44,7 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// ⤵️ ========test result: 
 // user signup
 router.post('/signup', async (req, res) => {
     try {
@@ -58,8 +61,6 @@ router.post('/signup', async (req, res) => {
         res.status(400).json(err);
     }
 });
-
-// not finished ⚠️ user profile needed? ⚠️
 
 module.exports = router;
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
