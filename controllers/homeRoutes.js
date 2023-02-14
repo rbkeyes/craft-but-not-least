@@ -1,6 +1,6 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Tag } = require("../models");
 // const withAuth = require("../utils/withAuth");
 
 router.get("/", async (req, res) => { // TODO: add withAuth
@@ -35,7 +35,7 @@ router.get("/login", (req, res) => {
 
 // **rb** adding new-listing route because I didn't see it anywhere. If it's here and I just missed it feel free to remove mine! **rb**
 // **rb** I haven't added withAuth to this route yet, will need it eventually **rb**
-router.get('/list-item', async (req, res) => {
+router.get('/new-listing', async (req, res) => {
   try {
       // get tag names from db
       const tagsData = await Tag.findAll();
@@ -49,7 +49,7 @@ router.get('/list-item', async (req, res) => {
       const tags = tagsData.map((tag) => tag.get({ plain: true }));
       console.log(tags);
       // render form with tags
-      res.render('list-item', {tags});
+      res.render('new-listing', {tags});
       // logged_in: req.session.logged_in
 
   } catch (err) {
