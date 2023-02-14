@@ -5,7 +5,7 @@ const { Product, User, Tag } = require('../../models');
 // const withAuth = require('../utils');
 
 // get all products
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { // TODO: add withAuth once login is working
     try {
         const productData = await Product.findAll({
             include: [

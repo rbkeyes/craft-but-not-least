@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const { User, Product, Tag, ProductTag } = require('../../models');
 
+// ⤵️ ========test result: 404 not found =======
 // user login with email and password
 router.post('/login', async (req, res) => {
     try {
@@ -42,6 +43,7 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// ⤵️ ========test result: 404 not found =======
 // user signup
 router.post('/signup', async (req, res) => {
     try {
@@ -56,6 +58,17 @@ router.post('/signup', async (req, res) => {
 
     } catch (err) {
         res.status(400).json(err);
+    }
+});
+
+// user log out
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
     }
 });
 

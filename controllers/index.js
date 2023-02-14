@@ -1,7 +1,7 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require('express').Router();
 const apiRoutes = require('./api');
-const homeRoutes = require('./home-routes.js');
+const homeRoutes = require('./homeRoutes');
 // const rbroutes = require('./rbroutes');
 
 // router.use('/', rbroutes);
