@@ -5,7 +5,7 @@ const { Product, User, Tag } = require("../../models");
 
 // ⤵️=============test result: 500 Internal Server Error================
 // get all products by user id(localhost:3001/api/delete/user/:id)
-router.get("/user/:id", async (req, res) => {
+router.get("/user/:id", async (req, res) => { //TODO: add withAuth
     try {
       const productData = await Product.findAll({
         where: {
@@ -22,9 +22,10 @@ router.get("/user/:id", async (req, res) => {
           },
         ],
       });
+
       const products = productData.map((product) => product.get({ plain: true }));
       // ⭐️TODO: revise below once login is done
-      res.render(products);
+      res.render("all-products", { products });
       //res.render("all-products", { products, logged_in: req.session.logged_in });
     } catch (err) {
       res.status(500).json(err);

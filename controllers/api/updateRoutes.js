@@ -4,17 +4,17 @@ const router = require('express').Router();
 const { Product } = require('../../models');
 
 // ======== TODO: fix the function: 500 error ===========
-// update a product by product id(localhost:3001/api/update/:id)
-router.put("/product/:id", async (req, res) => {
+// update a product by product id(localhost:3001/api/update/product/:id)
+router.put("/product/:id",async (req, res) => {
     // router.put("/:id", withAuth, async (req, res) => {
       try {
         const productData = await Product.update(
           {
             // products: id, name, description, price, tag
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            tag: req.body.tag,
+            product_name: req.body.name,
+            product_description: req.body.description,
+            product_price: req.body.price,
+            product_tag: req.body.tag,
           },
           {
             where: {

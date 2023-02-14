@@ -75,7 +75,7 @@ router.get('/tag', async (req, res) => {
     }
 });
 
-// ⤵️ ======== function need to be fixed: 200 ok ========
+// ⤵️ ======== function need to be fixed: 200 ok but empty array ========
 // get all products by tag id
 router.get('/tag/:id', async (req, res) => { //⭐️TODO: add withAuth once login is working
     try {
@@ -105,19 +105,19 @@ router.get('/tag/:id', async (req, res) => { //⭐️TODO: add withAuth once log
 
 // ⤵️ ======== function need to be fixed: no contact model&seeds =======
 // contact seller(localhost:3001/api/buy/contact/:id)
-router.post('/contact/:id', async (req, res) => {
-// router.post('/contact/:id', withAuth, async (req, res) => {
-    try {
-        const newContact = await Contact.create({
-            ...req.body,
-            user_id: req.session.user_id,
-            product_id: req.params.id,
-        });
-        res.status(200).json(newContact);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+// router.post('/contact/:id', async (req, res) => {
+// // router.post('/contact/:id', withAuth, async (req, res) => {
+//     try {
+//         const newContact = await Contact.create({
+//             ...req.body,
+//             user_id: req.session.user_id,
+//             product_id: req.params.id,
+//         });
+//         res.status(200).json(newContact);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
 
 
 module.exports = router;
