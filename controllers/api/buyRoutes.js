@@ -4,9 +4,9 @@ const router = require('express').Router();
 const { Product, User, Tag } = require('../../models');
 // const withAuth = require('../utils');
 
-// ⤵️ ======== test result: 200 ok ========
+// ⤵️ ======== ✅test result: 200 ok ========
 // get all products (localhost:3001/api/buy)
-router.get('/', async (req, res) => { // TODO: add withAuth once login is working
+router.get('/', async (req, res) => { // ⭐️TODO: add withAuth once login is working
     try {
         const productData = await Product.findAll({
             include: [
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => { // TODO: add withAuth once login is workin
     }
 });
 
-// ⤵️ ======== test result: 200 ok ========
+// ⤵️ ======== ✅test result: 200 ok ========
 // get one product by id
 router.get('/:id', async (req, res) => { //⭐️TODO: add withAuth once login is working
     try {

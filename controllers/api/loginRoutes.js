@@ -1,6 +1,6 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const router = require('express').Router();
-const { User, Product, Tag, ProductTag } = require('../../models');
+const { User } = require('../../models');
 
 // ⤵️ ========test result: 
 // user login with email and password

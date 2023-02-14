@@ -3,7 +3,8 @@ const router = require("express").Router();
 const { Product, User, Tag } = require("../../models");
 // const withAuth = require("../utils");
 
-// get all products by user id
+// ⤵️=============test result: 500 Internal Server Error================
+// get all products by user id(localhost:3001/api/delete/user/:id)
 router.get("/user/:id", async (req, res) => {
     try {
       const productData = await Product.findAll({
@@ -22,13 +23,16 @@ router.get("/user/:id", async (req, res) => {
         ],
       });
       const products = productData.map((product) => product.get({ plain: true }));
-      res.render("all-products", { products, logged_in: req.session.logged_in });
+      // ⭐️TODO: revise below once login is done
+      res.render(products);
+      //res.render("all-products", { products, logged_in: req.session.logged_in });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  // delete a product by id 
+// ⤵️=============✅test result: 200 OK================
+  // delete a product by id(localhost:3001/api/delete/:id)
 router.delete("/:id", async (req, res) => {
     // router.delete("/:id", withAuth, async (req, res) => {
       try {

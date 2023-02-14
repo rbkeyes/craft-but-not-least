@@ -1,11 +1,11 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 // for user profile page: edit user info, create a new listing, edit a listing, delete a listing, contact seller
 const router = require("express").Router();
-const { User, Product, Tag } = require("../../models");
+const { User, Product } = require("../../models");
 
-// ⤵️ ========test result: 500 internal server error =======
-// get user info by user id
-router.get("/:id", async (req, res) => {
+// ⤵️ ========test result: 500 Internal Server Error =================
+// get user info by user id(localhost:3001/api/profile/:id)
+router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware 
   try {
     const userData = await User.findByPk(req.params.id, {
       include: [
@@ -16,19 +16,22 @@ router.get("/:id", async (req, res) => {
       ],
     });
     const user = userData.get({ plain: true });
-    res.render("profile", { user, logged_in: req.session.logged_in });
+    // ⭐️TODO: delete below once user profile page is ready
+    res.render(user);
+    // ⭐️TODO: comment back below once user profile page is ready
+    // res.render("profile", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// ⤵️ ========test result: 
-// update user info by user id
+// ⤵️ ========test result: 400 Bad Request =================
+// update user info by user id(localhost:3001/api/profile/:id)
 router.put("/:id", async (req, res) => {
   try {
     User.update(
       {
-        // users: id, name, email, password
+        // user: name, email, password
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
