@@ -1,10 +1,10 @@
-*{
+ *{
     margin:0;
     padding: 0;
     font-family: 'poppins', 'sans-serif';
     box-sizing: border-box;
 }
-
+/* white container holding login / signup info */
 .container{
     width: 100%;
     height: 100vh;
@@ -15,6 +15,7 @@
     position: relative;
 }
 
+/* background */
 .background{
     object-fit: cover;
 }
@@ -31,14 +32,14 @@
     text-align: center;
 }
 
-.form-box h1{
+.form-box h2{
     font-size: 30px;
     margin-bottom: 60px;
     color: #0e2a57e3;
     position:relative;
 }
 
-.form-box h1::after{
+.form-box h2::after{
     content: '';
     width: 30px;
     height: 4px;
@@ -59,6 +60,7 @@
     max-height: 65px;
     transition: max-height 0.5s;
     overflow: hidden;
+    color: #3c00a0;
 }
 
 input{
@@ -109,4 +111,9 @@ form p a{
 .btn-field button.disable{
     background: #eaeaea;
     color: #555;
+}
+
+/*login card*/
+login {
+    width: 100%;
 }
