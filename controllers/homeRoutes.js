@@ -47,7 +47,6 @@ router.get('/new-listing', async (req, res) => {
 
       // if getting all: map array then get({plain: true}) before rendering
       const tags = tagsData.map((tag) => tag.get({ plain: true }));
-      console.log(tags);
       // render form with tags
       res.render('new-listing', {tags});
       // logged_in: req.session.logged_in
@@ -56,24 +55,6 @@ router.get('/new-listing', async (req, res) => {
       res.status(500).json(err);
   }
 });
-
-router.get('/users', async(req,res) => {
-  try {
-    const userData = await User.findAll();
-    res.json(userData);
-  } catch (err) {
-    res.json(err);
-  }
-})
-
-router.get('/users/:id', async(req,res) => {
-  try {
-    const userData = await User.findAll();
-    res.json(userData);
-  } catch (err) {
-    res.json(err);
-  }
-})
 
 
 module.exports = router;

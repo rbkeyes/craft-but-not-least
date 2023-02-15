@@ -4,9 +4,9 @@ const newListingHandler = async (event) => {
   event.preventDefault();
 
   // Get elements from form
-  const itemName = document.getElementById('item-name').value.trim();
-  const description = document.getElementById('description').value.trim();
-  const listPrice = document.getElementById('list-price').value.trim();
+  const productName = document.getElementById('item-name').value.trim();
+  const productDescription = document.getElementById('description').value.trim();
+  const productPrice = document.getElementById('list-price').value.trim();
 
   // not 100% sure what we'll need for for the photo upload, adding this for now but can edit later as needed 
   // const photoUpload = document.getElementById('photo-upload');
@@ -16,34 +16,37 @@ const newListingHandler = async (event) => {
   // **rb** not sure what type model will need tags to be in. Can create objects if needed. **rb**
   // **rb** or just 
   const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
-  const productTag = [];
+  let productTag;
+  // const productTag = [];
   console.log(checkbox);
   for (const checked of checkbox) {
     console.log(checked);
-    productTag.push(checked.value);
+    productTag = checked.value;
   };
   console.log(productTag);
-  
 
-  if (itemName && description && listPrice && productTag) { 
-    console.log({ itemName, description, listPrice, productTag })
-  //   // add photoUpload when ready
-  //   // Send the item data to the server
-    const response = await fetch('/list-item', {
-      method: 'POST',
-      body: JSON.stringify({ itemName, description, listPrice, productTag }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+  try {
+    if (productName && productDescription && productPrice && productTag) {
+      console.log({ productName, productDescription, productPrice, productTag })
+      //   // add photoUpload when ready
+      //   // Send the item data to the server
+      const response = await fetch('/api/sell', {
+        method: 'POST',
+        body: JSON.stringify({ productName, productDescription, productPrice, productTag }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-    if (response.ok) {
-      console.log('Success!')
-      document.location.replace('/');
-      // route to ?? page after POST
-      return;
-    } else {
-      alert('Unable to list item.');
-      return;
+      if (response.ok) {
+        console.log('Success!')
+        document.location.replace('/');
+        // route to ?? page after POST
+        return;
+      }
     }
+  } catch (err) {
+    console.error(err);
+    alert('Unable to create new listing');
+    return;
   }
 };
 
