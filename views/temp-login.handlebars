@@ -24,7 +24,9 @@
           <!-- Login Btn -->
           <div class="form-group btn-field">
             <button class="btn btn-primary" id="signinBtn" type="submit"
-              onclick="window.location.href = 'profile-page.handlebars'">login</button>
+            {{!-- ⛔️ **rb** I'm removing this onclick, can update form handler redirect if we want it to go to profile page after login **rb** --}}
+              {{!-- onclick="window.location.href = 'profile-page.handlebars'" --}}
+              >login</button>
           </div>
         </form>
       </div>

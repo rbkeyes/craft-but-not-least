@@ -12,22 +12,23 @@ const getProfileByID = async () => {
       alert(response.statusText);
     }
   };
-  ​
+
+  // **rb** this is already in newListing.js **rb**
   // ❄️ MX: fetch to create a new product for user to SELL
   // ❄️ MX: fetch below linked with "./controllers/api/sellRoutes.js"
-  const sellProduct = async () => {
-    const response = await fetch("/api/sell", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      // ...
-      // return;
-    } else {
-      alert(response.statusText);
-    }
-  };
-  ​
+  // const sellProduct = async () => {
+  //   const response = await fetch("/api/sell", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //   });
+  //   if (response.ok) {
+  //     // ...
+  //     // return;
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // };
+  
   // ❄️ MX: fetch to update user's current selling products/listings
   // ❄️ MX: fetch below linked with "./controllers/api/updateRoutes.js"
   const updateProduct = async () => {
@@ -75,7 +76,7 @@ const getProfileByID = async () => {
   ​
   // ❄️ MX: get fetch to work with the button: button name to be filled in
   document.querySelector("").addEventListener("click", getProfileByID);
-  document.querySelector("").addEventListener("click", sellProduct);
+  // document.querySelector("").addEventListener("click", sellProduct);
   document.querySelector("").addEventListener("click", updateProduct);
   document.querySelector("").addEventListener("click", deleteProduct);
   document.querySelector("").addEventListener("click", displayAllByUserID);
