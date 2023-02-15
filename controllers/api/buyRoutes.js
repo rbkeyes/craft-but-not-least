@@ -59,24 +59,18 @@ router.get('/product/:id', async (req, res) => { //⭐️TODO: add withAuth once
 // get all tags(localhost:3001/api/buy/tag)
 router.get("/tag", async (req, res) => {
   try {
-    const tagData = await Tag.findAll();
-    // const tagData = await Tag.findAll({
-    //   include: [
-    //     {
-    //       model: Product,
-    //       attributes: ["name", "price", "description"],
-    //     },
-    //   ],
-    // });
+    // const tagData = await Tag.findAll();
+    const tagData = await Tag.findAll({
+      include: [{ model: Product }],
+    });
     const tags = tagData.map((tag) => tag.get({ plain: true }));
-    res.json(tags);
+    res.status(200).json(tags);
   } catch (err) {
-    console.log("@@@@", err);
     res.status(500).json(err);
   }
 });
 
-// ⤵️ ========✅function need to be fixed: 200 ok but empty array ========
+// ⤵️ ========✅function need to be fixed: 200 ok ========
 // get all products by tag id
 router.get("/tag/:id", async (req, res) => {
   //⭐️TODO: add withAuth once login is working
