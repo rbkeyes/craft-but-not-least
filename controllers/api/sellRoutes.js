@@ -11,7 +11,8 @@ router.post("/", async (req, res) => { // ⭐️TODO: add withAuth once login is
   try {
     const newProduct = await Product.create({
       ...req.body,
-      user_id: req.session.user_id,
+      //🐙 **rb** commented out this bit just for now while I check if form submission works **rb** 🐙
+      // user_id: req.session.user_id,
     });
     // comment out below after login is working
     res.status(200).json(newProduct);

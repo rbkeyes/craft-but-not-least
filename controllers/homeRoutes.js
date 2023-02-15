@@ -57,6 +57,24 @@ router.get('/new-listing', async (req, res) => {
   }
 });
 
+router.get('/users', async(req,res) => {
+  try {
+    const userData = await User.findAll();
+    res.json(userData);
+  } catch (err) {
+    res.json(err);
+  }
+})
+
+router.get('/users/:id', async(req,res) => {
+  try {
+    const userData = await User.findAll();
+    res.json(userData);
+  } catch (err) {
+    res.json(err);
+  }
+})
+
 
 module.exports = router;
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨

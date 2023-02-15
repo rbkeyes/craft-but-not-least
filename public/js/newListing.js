@@ -1,25 +1,37 @@
-const listItemFormHandler = async (event) => {
+// **rb** handle new listing form submission **rb**
+const newListingHandler = async (event) => {
   // Stop the browser from submitting the form so we can do so with JavaScript
   event.preventDefault();
 
-  // Gather the data from the form elements on the page
+  // Get elements from form
   const itemName = document.getElementById('item-name').value.trim();
   const description = document.getElementById('description').value.trim();
   const listPrice = document.getElementById('list-price').value.trim();
+
   // not 100% sure what we'll need for for the photo upload, adding this for now but can edit later as needed 
-  const photoUpload = document.getElementById('photo-upload');
-  // there will be multiple tags, want to get all of them
-  const checkbox = document.querySelectorAll('.checkbox');
-  const tagName = document.querySelectorAll('#tag-name');
+  // const photoUpload = document.getElementById('photo-upload');
 
-  // just realized I'll need to add code to register the checkboxes & get the associated tags.
+  // get all checked tags
+  // **rb** first get all selected checkboxes, then get the value of each checked checkbox and push to array **rb**
+  // **rb** not sure what type model will need tags to be in. Can create objects if needed. **rb**
+  // **rb** or just 
+  const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+  const productTag = [];
+  console.log(checkbox);
+  for (const checked of checkbox) {
+    console.log(checked);
+    productTag.push(checked.value);
+  };
+  console.log(productTag);
+  
 
-  if (itemName && description && listPrice && checkbox) { 
-    // add photoUpload when ready
-    // Send the item data to the server
+  if (itemName && description && listPrice && productTag) { 
+    console.log({ itemName, description, listPrice, productTag })
+  //   // add photoUpload when ready
+  //   // Send the item data to the server
     const response = await fetch('/list-item', {
       method: 'POST',
-      body: JSON.stringify({ itemName, description, listPrice, checkbox }),
+      body: JSON.stringify({ itemName, description, listPrice, productTag }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -35,6 +47,5 @@ const listItemFormHandler = async (event) => {
   }
 };
 
-document
-  .getElementById('.list-item-form')
-  .addEventListener('submit', listItemFormHandler);
+
+document.getElementById('new-listing-form').addEventListener('submit', newListingHandler);
