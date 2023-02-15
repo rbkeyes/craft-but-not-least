@@ -25,7 +25,7 @@ const listItemFormHandler = async (event) => {
 
     if (response.ok) {
       console.log('Success!')
-      // document.location.replace('/');
+      document.location.replace('/');
       // route to ?? page after POST
       return;
     } else {
