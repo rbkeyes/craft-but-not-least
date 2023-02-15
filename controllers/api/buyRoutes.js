@@ -1,7 +1,7 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 // for user to buy products and contact seller
-const router = require('express').Router();
-const { Product, User, Tag } = require('../../models');
+const router = require("express").Router();
+const { Product, User, Tag } = require("../../models");
 // const withAuth = require('../utils');
 
 // ⤵️ ======== ✅test result: 200 ok ========
@@ -55,52 +55,54 @@ router.get('/product/:id', async (req, res) => { //⭐️TODO: add withAuth once
     }
 });
 
-
 // ⤵️ ======== test result: 500 Internal Server Error ========
 // get all tags(localhost:3001/api/buy/tag)
-router.get('/tag', async (req, res) => {
-    try {
-        const tagData = await Tag.findAll({
-            include: [
-                {
-                    model: Product,
-                    attributes: ['name', 'price', 'description'],
-                },
-            ],
-        });
-        const tags = tagData.map((tag) => tag.get({ plain: true }));
-        res.json(tags);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.get("/tag", async (req, res) => {
+  try {
+    const tagData = await Tag.findAll();
+    // const tagData = await Tag.findAll({
+    //   include: [
+    //     {
+    //       model: Product,
+    //       attributes: ["name", "price", "description"],
+    //     },
+    //   ],
+    // });
+    const tags = tagData.map((tag) => tag.get({ plain: true }));
+    res.json(tags);
+  } catch (err) {
+    console.log("@@@@", err);
+    res.status(500).json(err);
+  }
 });
 
-// ⤵️ ======== function need to be fixed: 200 ok but empty array ========
+// ⤵️ ========✅function need to be fixed: 200 ok but empty array ========
 // get all products by tag id
-router.get('/tag/:id', async (req, res) => { //⭐️TODO: add withAuth once login is working
-    try {
-        const productData = await Product.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-                {
-                    model: Tag,
-                    attributes: ['tag_name'],
-                    where: {
-                        id: req.params.id,
-                    },
-                },
-            ],
-        });
-        const products = productData.map((product) => product.get({ plain: true }));
-        // ⭐️TODO: comment back below after login is working
-        res.json(products);
-        // res.render('all-products', { products, logged_in: req.session.logged_in });
-    } catch (err) { 
-        res.status(500).json(err);
-    }
+router.get("/tag/:id", async (req, res) => {
+  //⭐️TODO: add withAuth once login is working
+  try {
+    const productData = await Product.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Tag,
+          attributes: ["tag_name"],
+          where: {
+            id: req.params.id,
+          },
+        },
+      ],
+    });
+    const products = productData.map((product) => product.get({ plain: true }));
+    // ⭐️TODO: comment back below after login is working
+    res.json(products);
+    // res.render('all-products', { products, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // ⤵️ ======== function need to be fixed: no contact model&seeds =======

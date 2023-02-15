@@ -16,13 +16,15 @@ Product.belongsTo(User, {
 
 // products have many tags (through ProductTag)
 Product.belongsToMany(Tag, {
-    through: ProductTag,
+    // through: ProductTag,
+    through: "product_tag",
     foreignKey: 'product_id',
 });
 
 // tags belong to many products (through ProductTag)
 Tag.belongsToMany(Product, {
-    through: ProductTag,
+    // through: ProductTag,
+    through: "product_tag",
     foreignKey: 'tag_id',
 });
 
