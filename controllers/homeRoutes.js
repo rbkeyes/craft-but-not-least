@@ -38,7 +38,7 @@ router.get("/login", (req, res) => {
 
 // **rb** adding new-listing route because I didn't see it anywhere. If it's here and I just missed it feel free to remove mine! **rb**
 // **rb** I haven't added withAuth to this route yet, will need it eventually **rb**
-router.get('/new-listing', withAuth, async (req, res) => {
+router.get('/sell', withAuth, async (req, res) => {
   try {
     // get tag names from db
     const tagsData = await Tag.findAll({ attributes: ['tag_name'] });
