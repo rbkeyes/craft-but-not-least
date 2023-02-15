@@ -1,7 +1,7 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 // for user to buy products and contact seller
 const router = require("express").Router();
-const { Product, User, Tag } = require("../../models");
+const { Product, User, Tag, ProductTag } = require("../../models");
 // const withAuth = require('../utils');
 
 // ⤵️ ======== ✅test result: 200 ok ========
@@ -59,18 +59,19 @@ router.get('/product/:id', async (req, res) => { //⭐️TODO: add withAuth once
 // get all tags(localhost:3001/api/buy/tag)
 router.get("/tag", async (req, res) => {
   try {
-    // const tagData = await Tag.findAll();
-    const tagData = await Tag.findAll({
-      include: [{ model: Product }],
-    });
+    const tagData = await Tag.findAll({});
+    console.log("###", tagData);
+
     const tags = tagData.map((tag) => tag.get({ plain: true }));
-    res.status(200).json(tags);
+    res.json(tags);
+    
   } catch (err) {
+    console.log("@@@", err);
     res.status(500).json(err);
   }
 });
 
-// ⤵️ ========✅function need to be fixed: 200 ok ========
+// ⤵️ ========✅test result: 200 ok ========
 // get all products by tag id
 router.get("/tag/:id", async (req, res) => {
   //⭐️TODO: add withAuth once login is working
