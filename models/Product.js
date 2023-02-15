@@ -41,7 +41,7 @@ Product.init(
 
    // MAY NEED: ⚠️ user has many products : TO BE CHECKED
   // ⛔️ **rb** commented out for now while testing form submit **rb** ⛔️
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
