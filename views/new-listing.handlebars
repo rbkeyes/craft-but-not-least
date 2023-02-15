@@ -1,6 +1,6 @@
 <h2>Add an item</h2>
 <!-- item name input -->
-<form class="form submit-form" id="list-item-form">
+<form class="form submit-form" id="new-listing-form">
     <div class="form-group">
         <label for="item-name">Item name:</label>
         <input class="form-input" type="text" id="item-name" />
@@ -23,13 +23,16 @@
     </div>
 
     <!-- tag checkboxes -->
-    <div class="form-group">
+    <div class="form-group product-tags">
         <label for="tags">Tags:</label>
         <!-- add checkboxes with tags from partial -->
-        {{#each tags as |tag|}}
-        {{> item-tags}}
-        {{/each}}
+        <div class="form-check tag-select">
+            <!-- add checkboxes with tags from partial -->
+            {{#each tags as |tag|}}
+            {{> item-tags}}
+            {{/each}}
 
+        </div>
     </div>
 
     <!-- submit button -->
@@ -38,4 +41,4 @@
     </div>
 </form>
 
-<script src="/js/listItemForm.js"></script>
+<script src="./newListing.js"></script>
