@@ -18,7 +18,7 @@ router.get("/", async (req, res) => { // TODO: add withAuth
       // **rb** commented out some code to allow homepage to render **rb**
     
       // users,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => { // TODO: add withAuth
 });
 
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect("/");
     return;
   }
@@ -50,9 +50,9 @@ router.get('/sell', withAuth, async (req, res) => {
     // if getting all: map array then get({plain: true}) before rendering
     const tags = tagsData.map((tag) => tag.get({ plain: true }));
     // render form with tags
-    res.render('new-listing', { 
+    res.render('sell', { 
       tags, 
-      loggedIn: req.session.loggedIn
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);

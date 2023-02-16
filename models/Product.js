@@ -1,8 +1,9 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const Sequelize = require('sequelize')
 
-class Product extends Model {}
+class Product extends Model { }
 
 // products: id, name, description, price, tag
 // 💥 **rb** Had to change the keys to be camel case so that the object created by handler would work in the POST. PLEASE KEEP AS CAMEL CASE **rb** 💥
@@ -15,40 +16,47 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    productName: {
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productDescription: {
+    product_description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productPrice: {
+    product_price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
     },
-    productTag: {
+    product_tag: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    // ⭐️ TODO: Add the product_image column
-    // OR a new model for images only/& build relationships in index
-    // product_image: {
-    // },
-
-   // MAY NEED: ⚠️ user has many products : TO BE CHECKED
-  // ⛔️ **rb** commented out for now while testing form submit **rb** ⛔️
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "id",
+      get() {
+        return this.getDataValue('product_tag').split(';')
+      },
+      set(val) {
+        this.setDataValue('product_tag', val.join(';'));
       },
     },
+  
+  // ⭐️ TODO: Add the product_image column
+  // OR a new model for images only/& build relationships in index
+  // product_image: {
+  // },
+
+  // MAY NEED: ⚠️ user has many products : TO BE CHECKED
+  // ⛔️ **rb** commented out for now while testing form submit **rb** ⛔️
+  user_id: {
+  type: DataTypes.INTEGER,
+  allowNull: false,
+  references: {
+    model: "user",
+    key: "id",
+  },
+},
     
   },
   {

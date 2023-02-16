@@ -6,13 +6,14 @@ const withAuth = require('../../utils/auth')
 
 // ⤵️============ ✅tested with json object input: 200 ok =================
 // create a new product to sell ((localhost:3001/api/sell)
+// **rb** added withAuth and updated 
 router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth once login is working
   // router.post("/", withAuth, async (req, res) => {
   try {
     const newProduct = await Product.create({
       ...req.body,
       //🐙 **rb** commented out this bit just for now while I check if form submission works **rb** 🐙
-      userId: req.session.userId,
+      user_id: req.session.user_id,
     });
     // comment out below after login is working
     res.status(200).json(newProduct);
