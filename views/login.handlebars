@@ -1,13 +1,16 @@
 <!-- style sheet-->
-<link rel="stylesheet" href="/css/styles.css">
-<script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script>
+{{!-- <link rel="stylesheet" href="/css/styles.css"> --}}
+{{!-- <script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script> --}}
 
+<hero>
+  <img src="/images/loginBackground.png" alt="yarns and threads"/>
+</hero>
 <!-- sign in card -->
-<div class="container">
-  <div class=id="login">
-    <div class="row justify-space-between-md">
-      <div class="login-card form-box" >
-        <h2 class="page-title" id="title">Login</h2>
+<div class="login-container">
+  <div class="login">
+    
+      <div class="login-card" >
+        <h2>Login</h2>
         <form class="form login-form">
           <!-- Email input -->
           <div class="form-group input-field">
@@ -23,15 +26,15 @@
           </div>
           <!-- Login Btn -->
           <div class="form-group btn-field">
-            <button class="btn btn-primary" id="signinBtn" type="submit"
+            <button class="login-btn" id="signinBtn" type="submit"
             {{!-- ⛔️ **rb** I'm removing this onclick, can update form handler redirect if we want it to go to profile page after login **rb** --}}
               {{!-- onclick="window.location.href = 'profile-page.handlebars'" --}}
-              >login</button>
+              >Login</button>
           </div>
-          {{!-- needs link to signup form --}}
+          <p><a href="/signup">Don't have an account? Sign up here!</a></p>
         </form>
       </div>
-    </div>
+    
   </div>
-
+</div>
   <script src="/js/login.js"></script>
