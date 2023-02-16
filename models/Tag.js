@@ -16,10 +16,10 @@ Tag.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        tag_description: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // tag_description: { //⭐️TODO: ADD tag_description in ./seeds/tag-seeds.js
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
     },
     {
         sequelize,
