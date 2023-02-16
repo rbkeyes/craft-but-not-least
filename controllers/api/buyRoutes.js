@@ -6,60 +6,63 @@ const { Product, User, Tag, ProductTag } = require("../../models");
 
 // ⤵️ ======== ✅test result: 200 ok ========
 // get all products (localhost:3001/api/buy/product)
-router.get('/product', async (req, res) => { // ⭐️TODO: add withAuth once login is working
-    try {
-        const productData = await Product.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-                {
-                    model: Tag,
-                    attributes: ['tag_name'],
-                },
-            ],
-        });
-        const products = productData.map((product) => product.get({ plain: true }));
-        // comment out below after login is working
-        res.json(products);
-        // ⤴️⚠️⤵️ to run the server needs to comment out this below first, after finished loggin session comment back ⚠️
-        // res.render('all-products', { products, logged_in: req.session.logged_in });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.get("/product", async (req, res) => {
+  // ⭐️TODO: add withAuth&render
+  try {
+    const productData = await Product.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Tag,
+          attributes: ["tag_name"],
+        },
+      ],
+    });
+    const products = productData.map((product) => product.get({ plain: true }));
+    // comment out below after login is working
+    res.json(products);
+    // ⤴️⚠️⤵️ to run the server needs to comment out this below first, after finished loggin session comment back ⚠️
+    // res.render('all-products', { products, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // ⤵️ ======== ✅test result: 200 ok ========
-// get one product by id
-router.get('/product/:id', async (req, res) => { //⭐️TODO: add withAuth once login is working
-    try {
-        const productData = await Product.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-                {
-                    model: Tag,
-                    attributes: ['tag_name'],
-                },
-            ],
-        });
-        const product = productData.get({ plain: true });
-        // ⭐️TODO: comment back below after login is working
-        res.json(product);
-        // res.render('product', { product, logged_in: req.session.logged_in });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+// get one product by id (localhost:3001/api/buy/product/1)
+router.get("/product/:id", async (req, res) => {
+  //⭐️TODO: add withAuth&render
+  try {
+    const productData = await Product.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Tag,
+          attributes: ["tag_name"],
+        },
+      ],
+    });
+    const product = productData.get({ plain: true });
+    // ⭐️TODO: comment back below after login is working
+    res.json(product);
+    // res.render('product', { product, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-// ⤵️ ======== test result: 500 Internal Server Error ========
+// ⤵️ ======== ✅test result: 200 ok ========
 // get all tags(localhost:3001/api/buy/tag)
 router.get("/tag", async (req, res) => {
   try {
-    const tagData = await Tag.findAll({});
+    console.log("###");
+    const tagData = await Tag.findAll();
     console.log("###", tagData);
 
     const tags = tagData.map((tag) => tag.get({ plain: true }));
