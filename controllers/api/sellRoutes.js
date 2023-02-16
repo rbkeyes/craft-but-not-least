@@ -24,6 +24,11 @@ const upload = multer({ storage: storage }).single('image_file');
 router.post('/upload', upload, async (req, res) => {
   try {
     console.log(req.file);
+    const newImage = Image.create({
+      file_name: req.file.filename,
+      path: req.file.path 
+    });
+    console.log(newImage);
   } catch (err) {
     console.error(err);
   }
@@ -35,12 +40,32 @@ router.post('/upload', upload, async (req, res) => {
 // ⤵️============ ✅tested with json object input: 200 ok =================
 // create a new product to sell ((localhost:3001/api/sell)
 // **rb** added withAuth and updated 
+// router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth once login is working
+//   // router.post("/", withAuth, async (req, res) => {
+//   try {
+//     const newProduct = await Product.create({
+//       ...req.body,
+//       user_id: req.session.user_id,
+//     });
+//     // comment out below after login is working
+//     res.status(200).json({
+//       message: "Product has been successfully added!",
+//       product: req.body,
+//     });
+//     // res.render('new-listing');
+//     // ⭐️TODO: add login session once login is working⤵️
+//     // res.render('new-Product', { products, logged_in: req.session.logged_in });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+// **rb** attempting to combine photo-upload and form submit to create new Product
 router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth once login is working
   // router.post("/", withAuth, async (req, res) => {
   try {
     const newProduct = await Product.create({
       ...req.body,
-      //🐙 **rb** commented out this bit just for now while I check if form submission works **rb** 🐙
       user_id: req.session.user_id,
     });
     // comment out below after login is working
