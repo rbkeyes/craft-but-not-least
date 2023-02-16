@@ -13,12 +13,7 @@ router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth onc
     const newProduct = await Image.create({
       ...req.body,
       //🐙 **rb** commented out this bit just for now while I check if form submission works **rb** 🐙
-      include: [
-        {
-          model: Product,
-          attributes: ["id", "name", "description", "price", "tag"],
-        },
-      ],
+      user_id: req.session.user_id,
     });
     // comment out below after login is working
     res.status(200).json({
