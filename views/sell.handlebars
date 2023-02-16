@@ -1,4 +1,11 @@
 <h2>Add an item</h2>
+<!-- **rb** removed disabled from input to see if I can get it to work **rb** -->
+<form action="/api/sell/upload" enctype="multipart/form-data" method="post" id="image-upload">
+    <div class="form-group">
+        <input type="file" class="form-control-file" name="image_file">
+        <input type="submit" value="upload image" class="btn btn-default">
+    </div>
+</form>
 <!-- item name input -->
 <form class="form submit-form" id="sell-item-form">
     <div class="form-group">
@@ -10,11 +17,7 @@
         <label for="description">Description:</label>
         <input class="form-input" type="text" id="description" />
     </div>
-    <!-- **rb** removed disabled from input to see if I can get it to work **rb** -->
-    <div class="form-group">
-        <label for="photo-upload">Upload a photo</label>
-        <input type="file" class="form-control-file" name="uploaded_file">
-    </div>
+
     <!-- item price input, decimal -->
     <div class="form-group">
         <label for="list-price">Price:</label>

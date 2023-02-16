@@ -17,14 +17,18 @@ Image.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    product_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "product",
-        key: "id"
-      },
-    },
+    path: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+    // product_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "product",
+    //     key: "id"
+    //   },
+    // },
   },
   {
     sequelize,
