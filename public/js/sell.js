@@ -21,7 +21,7 @@ try {
     console.log({ product_name, product_description, product_price, product_tag })
     const response = await fetch('/api/sell', {
       method: 'POST',
-      // body: JSON.stringify({ product_name, product_description, product_price, product_tag }),
+      body: JSON.stringify({ product_name, product_description, product_price, product_tag }),
       headers: { 'Content-Type': 'application/json' },
     });
 

@@ -23,10 +23,10 @@ Product.init(
       allowNull: false,
     },
     // **rb** would ultimately like to store images in their own table, adding here for simplicity until I get that set up **rb**
-    image_path: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // image_path: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     product_price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
