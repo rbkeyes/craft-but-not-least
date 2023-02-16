@@ -13,7 +13,7 @@ router.get("/", async (req, res) => { // TODO: add withAuth
     // const users = userData.map((user) => user.get({ plain: true }));
 
     res.render("homepage", {
-          // **rb** commented out some code to allow homepage to render **rb**
+      // **rb** commented out some code to allow homepage to render **rb**
       // users,
       // logged_in: req.session.logged_in,
     });
@@ -37,23 +37,21 @@ router.get("/login", (req, res) => {
 // **rb** I haven't added withAuth to this route yet, will need it eventually **rb**
 router.get('/new-listing', async (req, res) => {
   try {
-      // get tag names from db
-      const tagsData = await Tag.findAll();
+    // get tag names from db
+    const tagsData = await Tag.findAll({ attributes: ['tag_name'] });
 
-      // 404 if nothing found
-      if (!tagsData) {
-          res.status(404).json('No tags found');
-      };
-
-      // if getting all: map array then get({plain: true}) before rendering
-      const tags = tagsData.map((tag) => tag.get({ plain: true }));
-      console.log(tags);
-      // render form with tags
-      res.render('new-listing', {tags});
-      // logged_in: req.session.logged_in
+    // 404 if nothing found
+    if (!tagsData) {
+      res.status(404).json('No tags found');
+    };
+    // if getting all: map array then get({plain: true}) before rendering
+    const tags = tagsData.map((tag) => tag.get({ plain: true }));
+    // render form with tags
+    res.render('new-listing', { tags });
+    // logged_in: req.session.logged_in
 
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 
