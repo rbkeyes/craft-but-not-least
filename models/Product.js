@@ -1,8 +1,9 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const Sequelize = require('sequelize')
 
-class Product extends Model {}
+class Product extends Model { }
 
 // products: id, name, description, price, tag
 Product.init(
@@ -31,6 +32,12 @@ Product.init(
     product_tag: { // ⭐️TODO: change the product_tag from number to tag_name(string) in ./seeds/products.json
       type: DataTypes.STRING,
       allowNull: false,
+      get() {
+        return this.getDataValue('product_tag').split(';')
+      },
+      set(val) {
+        this.setDataValue('product_tag', val.join(';'));
+      },
     },
     user_id: { 
       type: DataTypes.INTEGER,

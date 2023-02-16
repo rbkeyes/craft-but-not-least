@@ -1,12 +1,12 @@
 // **rb** handle new listing form submission **rb**
-const newListingHandler = async (event) => {
+const sellItemHandler = async (event) => {
   // Stop the browser from submitting the form so we can do so with JavaScript
   event.preventDefault();
 
   // Get elements from form
-  const productName = document.getElementById('item-name').value.trim();
-  const productDescription = document.getElementById('description').value.trim();
-  const productPrice = document.getElementById('list-price').value.trim();
+  const product_name = document.getElementById('item-name').value.trim();
+  const product_description = document.getElementById('description').value.trim();
+  const product_price = document.getElementById('list-price').value.trim();
 
   // not 100% sure what we'll need for for the photo upload, adding this for now but can edit later as needed 
   // const photoUpload = document.getElementById('photo-upload');
@@ -16,23 +16,25 @@ const newListingHandler = async (event) => {
   // **rb** not sure what type model will need tags to be in. Can create objects if needed. **rb**
   // **rb** or just 
   const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
-  let productTag;
-  // const productTag = [];
+  let product_tag = []
+  // const tags = [];
+  // const product_tag = [];
   console.log(checkbox);
   for (const checked of checkbox) {
     console.log(checked);
-    productTag = checked.value;
+    product_tag.push(checked.value);
   };
-  console.log(productTag);
+  
+  console.log(product_tag);
 
   try {
-    if (productName && productDescription && productPrice && productTag) {
-      console.log({ productName, productDescription, productPrice, productTag })
+    if (product_name && product_description && product_price && product_tag) {
+      console.log({ product_name, product_description, product_price, product_tag })
       //   // add photoUpload when ready
       //   // Send the item data to the server
       const response = await fetch('/api/sell', {
         method: 'POST',
-        body: JSON.stringify({ productName, productDescription, productPrice, productTag }),
+        body: JSON.stringify({ product_name, product_description, product_price, product_tag }),
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -51,4 +53,4 @@ const newListingHandler = async (event) => {
 };
 
 
-document.getElementById('new-listing-form').addEventListener('submit', newListingHandler);
+document.getElementById('sell-item-form').addEventListener('submit', sellItemHandler);
