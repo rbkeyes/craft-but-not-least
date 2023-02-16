@@ -26,6 +26,13 @@ Tag.belongsToMany(Product, {
     foreignKey: 'tag_id',
 });
 
+// **rb** adding relationship between product and uploaded images **rb**
+Product.hasOne(Image);
+
+Image.belongsTo(Product, {
+    onDelete: 'CASCADE'
+});
+
 // ⭐️ TODO: relationship between product image & product
 
 module.exports = {

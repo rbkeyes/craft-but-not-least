@@ -8,7 +8,6 @@ const sellProductRoutes = require('./sellRoutes');
 const deleteProductRoutes = require('./deleteRoutes');
 const updateProductRoutes = require('./updateRoutes');
 
-
 router.use('/', userLoginRoutes); // ✅
 router.use('/profile', userProfileRoutes);
 router.use('/buy', buyProductRoutes);

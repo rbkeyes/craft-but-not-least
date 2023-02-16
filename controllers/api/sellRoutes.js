@@ -10,10 +10,15 @@ const withAuth = require('../../utils/auth')
 router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth once login is working
   // router.post("/", withAuth, async (req, res) => {
   try {
-    const newProduct = await Product.create({
+    const newProduct = await Image.create({
       ...req.body,
       //🐙 **rb** commented out this bit just for now while I check if form submission works **rb** 🐙
-      user_id: req.session.user_id,
+      include: [
+        {
+          model: Product,
+          attributes: ["id", "name", "description", "price", "tag"],
+        },
+      ],
     });
     // comment out below after login is working
     res.status(200).json({

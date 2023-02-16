@@ -14,15 +14,15 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: { 
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    product_description: { 
+    product_description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    product_price: { 
+    product_price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
@@ -39,7 +39,7 @@ Product.init(
         this.setDataValue('product_tag', val.join(';'));
       },
     },
-    user_id: { 
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
