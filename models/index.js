@@ -10,7 +10,9 @@ const ProductTag = require('./ProductTag');
 User.hasMany(Product);
 
 // Products belongsTo User
-Product.belongsTo(User);
+Product.belongsTo(User, {
+    foreignKey: 'user_id',
+    });
 
 // products have many tags (through ProductTag)
 Product.belongsToMany(Tag, {

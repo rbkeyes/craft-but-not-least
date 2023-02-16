@@ -3,7 +3,7 @@ const router = require("express").Router();
 const { Product, User, Tag } = require("../../models");
 // const withAuth = require("../utils");
 
-// ⤵️=============test result: 500 Internal Server Error================
+// ⤵️=============✅test result: 200 ok ================
 // get all products by user id(localhost:3001/api/delete/user/:id)
 router.get("/user/:id", async (req, res) => { //TODO: add withAuth
     try {
@@ -25,7 +25,8 @@ router.get("/user/:id", async (req, res) => { //TODO: add withAuth
 
       const products = productData.map((product) => product.get({ plain: true }));
       // ⭐️TODO: revise below once login is done
-      res.render("all-products", { products });
+      res.json(products); //⬅️for testing only
+      // no "all-products" handlebar yet
       //res.render("all-products", { products, logged_in: req.session.logged_in });
     } catch (err) {
       res.status(500).json(err);
@@ -42,11 +43,14 @@ router.delete("/:id", async (req, res) => {
             id: req.params.id,
           },
         });
-        if (!productData) {
+        // show error message if no product found with this id
+        if (!productData) { // not working
           res.status(404).json({ message: "No product found with this id!" });
           return;
         }
-        res.status(200).json(productData);
+        res.status(200).json({
+          message: `Product with id ${req.params.id} has been deleted!`,
+        });
       } catch (err) {
         res.status(500).json(err);
       }
