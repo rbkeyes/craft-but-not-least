@@ -5,7 +5,6 @@ const sequelize = require("../config/connection");
 class Product extends Model {}
 
 // products: id, name, description, price, tag
-
 Product.init(
   {
     id: {
@@ -14,32 +13,26 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    productName: {
+    product_name: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productDescription: {
+    product_description: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productPrice: {
+    product_price: { 
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
     },
-    productTag: {
+    product_tag: { // ⭐️TODO: change the product_tag from number to tag_name(string) in ./seeds/products.json
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // ⭐️ TODO: Add the product_image column
-    // OR a new model for images only/& build relationships in index
-    // product_image: {
-    // },
-
-   // MAY NEED: ⚠️ user has many products : TO BE CHECKED
-    userId: {
+    user_id: { 
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -47,7 +40,12 @@ Product.init(
         key: "id",
       },
     },
-    
+
+    // ⭐️ TODO: Add the product_image column
+    // OR a new model for images only/& build relationships in index
+    // product_image: {
+    // },
+
   },
   {
     sequelize,

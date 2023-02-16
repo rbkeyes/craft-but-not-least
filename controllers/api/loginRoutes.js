@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// ⤵️ ========test result: 
+// ⤵️ ========test result: ✅
 // user login with email and password
 router.post('/login', async (req, res) => {
     try {
@@ -45,7 +45,7 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// ⤵️ ========test result: 
+// ⤵️ ========test result: ?✅
 // user signup
 router.post('/signup', async (req, res) => {
     try {

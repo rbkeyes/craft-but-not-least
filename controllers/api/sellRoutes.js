@@ -5,8 +5,8 @@ const { Product } = require("../../models");
 const withAuth = require('../../utils/auth')
 
 // ⤵️============ ✅tested with json object input: 200 ok =================
-// create a new product to sell ((localhost:3001/api/sell)
-router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth once login is working
+// create a new product to sell (localhost:3001/api/sell)
+router.post("/", async (req, res) => { // ⭐️TODO: add withAuth once login is working
   // router.post("/", withAuth, async (req, res) => {
   try {
     const newProduct = await Product.create({
@@ -15,7 +15,11 @@ router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth onc
       userId: req.session.userId,
     });
     // comment out below after login is working
-    res.status(200).json(newProduct);
+    res.status(200).json({
+      message: "Product has been successfully added!",
+      product: req.body,
+    });
+    // res.render('new-listing');
     // ⭐️TODO: add login session once login is working⤵️
     // res.render('new-Product', { products, logged_in: req.session.logged_in });
   } catch (err) {
