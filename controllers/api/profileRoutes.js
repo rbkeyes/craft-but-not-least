@@ -3,7 +3,7 @@
 const router = require("express").Router();
 const { User, Product } = require("../../models");
 
-// ⤵️ ========test result: 500 Internal Server Error =================
+// ⤵️ ========test result: 
 // get user info by user id(localhost:3001/api/profile/:id)
 router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware 
   try {
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware
   }
 });
 
-// ⤵️ ========test result: 400 Bad Request =================
+// ⤵️ ========test result: 
 // update user info by user id(localhost:3001/api/profile/:id)
 router.put("/:id", async (req, res) => {
   try {

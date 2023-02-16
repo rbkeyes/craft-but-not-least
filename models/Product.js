@@ -6,8 +6,6 @@ const Sequelize = require('sequelize')
 class Product extends Model { }
 
 // products: id, name, description, price, tag
-// 💥 **rb** Had to change the keys to be camel case so that the object created by handler would work in the POST. PLEASE KEEP AS CAMEL CASE **rb** 💥
-
 Product.init(
   {
     id: {
@@ -16,22 +14,22 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: {
+    product_name: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
-    product_description: {
+    product_description: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
-    product_price: {
+    product_price: { 
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
     },
-    product_tag: {
+    product_tag: { // ⭐️TODO: change the product_tag from number to tag_name(string) in ./seeds/products.json
       type: DataTypes.STRING,
       allowNull: false,
       get() {
@@ -41,23 +39,20 @@ Product.init(
         this.setDataValue('product_tag', val.join(';'));
       },
     },
-  
-  // ⭐️ TODO: Add the product_image column
-  // OR a new model for images only/& build relationships in index
-  // product_image: {
-  // },
+    user_id: { 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
 
-  // MAY NEED: ⚠️ user has many products : TO BE CHECKED
-  // ⛔️ **rb** commented out for now while testing form submit **rb** ⛔️
-  user_id: {
-  type: DataTypes.INTEGER,
-  allowNull: false,
-  references: {
-    model: "user",
-    key: "id",
-  },
-},
-    
+    // ⭐️ TODO: Add the product_image column
+    // OR a new model for images only/& build relationships in index
+    // product_image: {
+    // },
+
   },
   {
     sequelize,

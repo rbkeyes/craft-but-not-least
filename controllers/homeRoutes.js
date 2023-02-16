@@ -33,7 +33,7 @@ router.get("/login", (req, res) => {
 
   // res.render("login");
   // **rb** temp login route added below for use until custom login is done **rb**
-  res.render("temp-login");
+  res.render("login");
 });
 
 // **rb** adding new-listing route because I didn't see it anywhere. If it's here and I just missed it feel free to remove mine! **rb**

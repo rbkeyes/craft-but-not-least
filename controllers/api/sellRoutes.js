@@ -16,7 +16,11 @@ router.post("/", withAuth, async (req, res) => { // ⭐️TODO: add withAuth onc
       user_id: req.session.user_id,
     });
     // comment out below after login is working
-    res.status(200).json(newProduct);
+    res.status(200).json({
+      message: "Product has been successfully added!",
+      product: req.body,
+    });
+    // res.render('new-listing');
     // ⭐️TODO: add login session once login is working⤵️
     // res.render('new-Product', { products, logged_in: req.session.logged_in });
   } catch (err) {

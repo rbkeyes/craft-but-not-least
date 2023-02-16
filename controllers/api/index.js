@@ -9,12 +9,12 @@ const deleteProductRoutes = require('./deleteRoutes');
 const updateProductRoutes = require('./updateRoutes');
 
 
-router.use('/', userLoginRoutes); 
+router.use('/', userLoginRoutes); // ✅
 router.use('/profile', userProfileRoutes);
 router.use('/buy', buyProductRoutes);
-router.use('/sell', sellProductRoutes);
-router.use('/delete', deleteProductRoutes);
-router.use('/update', updateProductRoutes);
+router.use('/sell', sellProductRoutes); // ✅
+router.use('/delete', deleteProductRoutes); // ✅
+router.use('/update', updateProductRoutes); // ✅
 
 
 router.use((req, res) => {

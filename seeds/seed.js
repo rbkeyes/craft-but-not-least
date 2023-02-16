@@ -1,10 +1,11 @@
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
 const sequelize = require("../config/connection");
-const { User, Product, Tag } = require("../models");
+const { User, Product, Tag, ProductTag } = require("../models");
 
 const userData = require("./users.json");
 const productData = require("./products.json");
 const tagData = require("./tags.json");
+const productTagData = require("./product-tag.json");
 
 // seed database for user, product, tag
 const seedDatabase = async () => {
@@ -21,6 +22,11 @@ const seedDatabase = async () => {
   });
 
   await Tag.bulkCreate(tagData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await ProductTag.bulkCreate(productTagData, {
     individualHooks: true,
     returning: true,
   });
