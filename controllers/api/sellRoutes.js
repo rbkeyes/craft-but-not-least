@@ -5,9 +5,9 @@ const path = require('path');
 const { Product, Image } = require("../../models");
 const withAuth = require('../../utils/auth');
 
+// **rb** I wasn't sure if there was a better place to put storage and upload - maybe in a helper file?
 const multer = require('multer');
-// const upload = multer({ dest: '../../public/images/uploads/' });
-
+// **rb** sets storage to disk storage
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
 
@@ -18,24 +18,8 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + "-" + Date.now() + ".jpg")
   }
 });
-
+// **rb** sets upload to use storage, single file only
 const upload = multer({ storage: storage }).single('image_file');
-
-router.post('/upload', upload, async (req, res) => {
-  try {
-    console.log(req.file);
-    const newImage = Image.create({
-      file_name: req.file.filename,
-      path: req.file.path 
-    });
-    console.log(newImage);
-  } catch (err) {
-    console.error(err);
-  }
-  // req.file is the name of your file in the form above, here 'uploaded_file'
-  // req.body will hold the text fields, if there were any   
-});
-
 
 // ⤵️============ ✅tested with json object input: 200 ok =================
 // create a new product to sell ((localhost:3001/api/sell)
@@ -56,6 +40,19 @@ router.post("/", withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+router.post('/upload', upload, async (req, res) => {
+  try {
+    console.log(req.file);
+    const newImage = Image.create({
+      file_name: req.file.filename,
+      path: req.file.path 
+    });
+    console.log(newImage);
+  } catch (err) {
+    console.error(err);
+  }  
 });
 
 
