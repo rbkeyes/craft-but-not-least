@@ -61,15 +61,15 @@ router.get("/product/:id", async (req, res) => {
 // get all tags(localhost:3001/api/buy/tag)
 router.get("/tag", async (req, res) => {
   try {
-    console.log("###");
+    // console.log("###");
     const tagData = await Tag.findAll();
-    console.log("###", tagData);
+    // console.log("###", tagData);
 
     const tags = tagData.map((tag) => tag.get({ plain: true }));
     res.json(tags);
-    
+    // res.render("tag");
   } catch (err) {
-    console.log("@@@", err);
+    // console.log("@@@", err);
     res.status(500).json(err);
   }
 });

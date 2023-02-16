@@ -5,8 +5,6 @@ const sequelize = require("../config/connection");
 class Product extends Model {}
 
 // products: id, name, description, price, tag
-// 💥 **rb** Had to change the keys to be camel case so that the object created by handler would work in the POST. PLEASE KEEP AS CAMEL CASE **rb** 💥
-
 Product.init(
   {
     id: {
@@ -15,31 +13,26 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: {
-    // productName: {
+    product_name: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
-    product_description: {
-    // productDescription: {
+    product_description: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
-    product_price: {
-    // productPrice: {
+    product_price: { 
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
     },
-    product_tag: {
-    // productTag: {
+    product_tag: { // ⭐️TODO: change the product_tag from number to tag_name(string) in ./seeds/products.json
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // ⭐️ TODO: update POST /api/products route to include user_id
-    user_id: {
+    user_id: { 
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -53,16 +46,6 @@ Product.init(
     // product_image: {
     // },
 
-   // MAY NEED: ⚠️ user has many products : TO BE CHECKED
-  // ⛔️ **rb** commented out for now while testing form submit **rb** ⛔️
-    // userId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
   },
   {
     sequelize,
