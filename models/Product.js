@@ -15,22 +15,26 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    productName: {
+    product_name: {
+    // productName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productDescription: {
+    product_description: {
+    // productDescription: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productPrice: {
+    product_price: {
+    // productPrice: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
     },
-    productTag: {
+    product_tag: {
+    // productTag: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -51,15 +55,14 @@ Product.init(
 
    // MAY NEED: ⚠️ user has many products : TO BE CHECKED
   // ⛔️ **rb** commented out for now while testing form submit **rb** ⛔️
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
-    
+    // userId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
