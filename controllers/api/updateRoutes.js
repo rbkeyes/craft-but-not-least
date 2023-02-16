@@ -6,7 +6,6 @@ const { Product } = require("../../models");
 // ⤵️============ ✅tested with json object input: 200 ok =================
 // update a product by product id(localhost:3001/api/update/product/:id)
 router.put("/product/:id", async (req, res) => {
-  // router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatedProduct = await Product.update(
       {

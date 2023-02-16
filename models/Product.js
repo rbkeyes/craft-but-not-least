@@ -34,6 +34,16 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // ⭐️ TODO: update POST /api/products route to include user_id
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+
     // ⭐️ TODO: Add the product_image column
     // OR a new model for images only/& build relationships in index
     // product_image: {
