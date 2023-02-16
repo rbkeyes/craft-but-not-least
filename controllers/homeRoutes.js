@@ -51,6 +51,7 @@ router.get('/sell', withAuth, async (req, res) => {
     const tags = tagsData.map((tag) => tag.get({ plain: true }));
     // render form with tags
     res.render('sell', { 
+      image_path: null,
       tags, 
       logged_in: req.session.logged_in
     });

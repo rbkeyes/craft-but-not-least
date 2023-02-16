@@ -1,6 +1,5 @@
 <h2>Add an item</h2>
 <!-- **rb** removed disabled from input to see if I can get it to work **rb** -->
-<form class="form submit-form" id="sell-item-form">
 <form action="/api/sell/upload" enctype="multipart/form-data" method="post" >
     <div class="form-group">
         <label for="image-upload">Upload an image for your listing:</label>
@@ -8,6 +7,8 @@
         <input type="submit" value="upload image" class="btn btn-default">
     </div>
 </form>
+
+<form class="form submit-form" id="sell-item-form">
 <!-- item name input -->
 
     <div class="form-group">
