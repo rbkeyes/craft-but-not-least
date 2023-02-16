@@ -3,7 +3,6 @@ const Product = require('./Product');
 const Tag = require('./Tag');
 const User = require('./User');
 const ProductTag = require('./ProductTag');
-const Image = require('./Image')
 
 //  https://sequelize.org/docs/v6/core-concepts/model-basics/
 
@@ -25,13 +24,6 @@ Product.belongsToMany(Tag, {
 Tag.belongsToMany(Product, {
     through: ProductTag,
     foreignKey: 'tag_id',
-});
-
-// **rb** adding relationship between product and uploaded images **rb**
-Product.hasOne(Image);
-
-Image.belongsTo(Product, {
-    onDelete: 'CASCADE'
 });
 
 // ⭐️ TODO: relationship between product image & product
