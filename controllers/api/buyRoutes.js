@@ -75,7 +75,7 @@ router.get("/tag", async (req, res) => {
 });
 
 // ⤵️ ========✅test result: 200 ok ========
-// get all products by tag id
+// get all products by tag id(localhost:3001/api/buy/tag/:id)
 router.get("/tag/:id", async (req, res) => {
   //⭐️TODO: add withAuth once login is working
   try {
