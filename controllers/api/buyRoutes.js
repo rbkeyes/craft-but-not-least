@@ -66,8 +66,8 @@ router.get("/tag", async (req, res) => {
     // console.log("###", tagData);
 
     const tags = tagData.map((tag) => tag.get({ plain: true }));
-    res.json(tags);
-    // res.render("tag");
+    // res.json(tags);
+    res.render("tags");
   } catch (err) {
     // console.log("@@@", err);
     res.status(500).json(err);
