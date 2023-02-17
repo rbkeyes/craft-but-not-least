@@ -8,6 +8,7 @@ const sellItemHandler = async (event) => {
   const product_description = document.getElementById('description').value.trim();
   const product_price = document.getElementById('list-price').value.trim();
 
+  // **rb** fyi I changed to value of the checkboxes to the tag.id
   const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
   let product_tag = []
   console.log(checkbox);
@@ -15,6 +16,7 @@ const sellItemHandler = async (event) => {
     console.log(checked);
     product_tag.push(checked.value);
   };
+
 
 try {
   if (product_name && product_description && product_price && product_tag) {

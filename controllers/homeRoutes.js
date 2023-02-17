@@ -44,7 +44,7 @@ router.get("/signup", (req, res) => {
 router.get('/sell', withAuth, async (req, res) => {
   try {
     // get tag names from db
-    const tagsData = await Tag.findAll({ attributes: ['tag_name'] });
+    const tagsData = await Tag.findAll({ attributes: ['id','tag_name'] });
 
     // 404 if nothing found
     if (!tagsData) {
@@ -52,6 +52,7 @@ router.get('/sell', withAuth, async (req, res) => {
     };
     // if getting all: map array then get({plain: true}) before rendering
     const tags = tagsData.map((tag) => tag.get({ plain: true }));
+    console.log(tags);
     // render form with tags
     res.render('sell', { 
       image_path: null,
