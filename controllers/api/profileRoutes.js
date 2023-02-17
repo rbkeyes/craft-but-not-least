@@ -2,6 +2,7 @@
 // for user profile page: edit user info, create a new listing, edit a listing, delete a listing, contact seller
 const router = require("express").Router();
 const { User, Product } = require("../../models");
+// const withAuth = require('../utils');
 
 // ⤵️ ========test result: 
 // get user info by user id(localhost:3001/api/profile/:id)
@@ -16,10 +17,7 @@ router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware
       ],
     });
     const user = userData.get({ plain: true });
-    // ⭐️TODO: delete below once user profile page is ready
-    res.render(user);
-    // ⭐️TODO: comment back below once user profile page is ready
-    // res.render("profile", { user, logged_in: req.session.logged_in });
+    res.render("profile-page", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
