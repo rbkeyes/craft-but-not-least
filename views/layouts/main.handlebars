@@ -19,11 +19,13 @@
     {{!-- updating title, header and nav - WINSTON --}}
     <nav>
       <a href="/">Home</a>
-      <a href="/">Buy</a>
+      {{!-- ❄️MX: changed href from / to /api/buy/product --}}
+      <a href="/api/buy/product">Buy</a>
       <a href="/sell">Sell</a>
     {{#if logged_in}}
     <button class="btn" id="logout">Logout</button>
     {{else}}
+    {{!-- <a href=""></a> --}}
     <button class="btn" id="logout">Login</button>
     {{/if}}
     </nav>

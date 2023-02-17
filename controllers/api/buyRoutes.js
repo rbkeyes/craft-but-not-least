@@ -66,8 +66,8 @@ router.get("/tag", async (req, res) => {
     // console.log("###", tagData);
 
     const tags = tagData.map((tag) => tag.get({ plain: true }));
-    res.json(tags);
-    // res.render("tag");
+    // res.json(tags);
+    res.render("tags");
   } catch (err) {
     // console.log("@@@", err);
     res.status(500).json(err);
@@ -75,7 +75,7 @@ router.get("/tag", async (req, res) => {
 });
 
 // ⤵️ ========✅test result: 200 ok ========
-// get all products by tag id
+// get all products by tag id(localhost:3001/api/buy/tag/:id)
 router.get("/tag/:id", async (req, res) => {
   //⭐️TODO: add withAuth once login is working
   try {
