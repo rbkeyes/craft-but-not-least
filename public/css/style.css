@@ -91,13 +91,15 @@ img {
     object-fit: cover;
   }
 
-/* white container holding login / signup info */
+
 .login-container {
   width: 100%;
   height: 100vh;
-  /* background-position: center;
-  background-size: cover;
-  position: relative; */
+  background-image: linear-gradient(rgba(212, 212, 220, 0.686),rgba(212, 212, 220, 0.686)), url(/images/background.png);
+    
+    background-position: center;
+    background-size: cover;
+    position: relative;
   display: flex;
   justify-content: center;
   margin:auto;
