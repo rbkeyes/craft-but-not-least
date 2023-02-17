@@ -11,7 +11,7 @@ router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware
       include: [
         {
           model: Product,
-          attributes: ["id", "name", "description", "price", "tag"],
+          attributes: ["id", "product_name", "product_description", "product_price", "product_tag"],
         },
       ],
     });

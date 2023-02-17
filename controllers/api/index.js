@@ -17,6 +17,7 @@ router.use('/delete', deleteProductRoutes); // ✅
 router.use('/update', updateProductRoutes); // ✅
 
 
+
 router.use((req, res) => {
     res.status(404).end();
 });

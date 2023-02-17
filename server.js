@@ -2,10 +2,11 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-// rb: added hbs below
+const multer = require('multer');
+const upload = multer({dest: './public/images/uploads'});
+
 const hbs = exphbs.create({});
 const routes = require('./controllers');
-// const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 

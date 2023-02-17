@@ -16,7 +16,6 @@ router.get("/", async (req, res) => { // TODO: add withAuth
 
     res.render("homepage", {
       // **rb** commented out some code to allow homepage to render **rb**
-    
       // users,
       logged_in: req.session.logged_in,
     });
@@ -30,14 +29,18 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-
-  // res.render("login");
-  // **rb** temp login route added below for use until custom login is done **rb**
   res.render("login");
 });
 
-// **rb** adding new-listing route because I didn't see it anywhere. If it's here and I just missed it feel free to remove mine! **rb**
-// **rb** I haven't added withAuth to this route yet, will need it eventually **rb**
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+  res.render("signup");
+});
+
+
 router.get('/sell', withAuth, async (req, res) => {
   try {
     // get tag names from db
@@ -51,6 +54,7 @@ router.get('/sell', withAuth, async (req, res) => {
     const tags = tagsData.map((tag) => tag.get({ plain: true }));
     // render form with tags
     res.render('sell', { 
+      image_path: null,
       tags, 
       logged_in: req.session.logged_in
     });
