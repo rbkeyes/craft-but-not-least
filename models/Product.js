@@ -35,14 +35,8 @@ Product.init(
       },
     },
     product_tag: { // ⭐️TODO: change the product_tag from number to tag_name(string) in ./seeds/products.json
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
-      get() {
-        return this.getDataValue('product_tag').split(';')
-      },
-      set(val) {
-        this.setDataValue('product_tag', val.join(';'));
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,
