@@ -27,6 +27,9 @@ router.put("/product/:id", async (req, res) => {
         message: "Product has been successfully updated!",
         product: req.body,
       });
+  // ⤵️ update a current listing from user profile page
+    // ⭐️TODO: add handlebar name in "" once it's created
+    //res.render(" ", { products, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }

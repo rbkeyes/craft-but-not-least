@@ -67,9 +67,12 @@
                 <div class="nav">
                     <ul>
                         <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
-                        <li onlcick="tabs(1)" class="user-review">Update Listing</li>
+                        {{!-- ❄️MX: added <a>tag --}}
+                        <a href="/api/sell">
+                            <li onlcick="tabs(1)" class="user-review">Update Listing</li>
+                        </a>
                         <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
-                        {{!-- ❄️MX: added 2 lists --}}
+                        {{!-- ❄️MX: added 2 lists, class not defined in css --}}
                         <li onlcick="tabs(3)" class="user-displayAll">View Current Listing</li>
                         <li onlcick="tabs(4)" class="user-update">Update Account Info</li>
 
@@ -94,7 +97,7 @@
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, perferendis blanditiis adipisci
                         distinctio porro omnis labore non facere commodi enim? In quasi eos tempore odit rerum neque
                         earum culpa a.</p>
-                    {{!-- ❄️MX: added 2 divs --}}
+                    {{!-- ❄️MX: added 2 divs, class not defined in css --}}
                     <div class="profile-displayAlltab"></div>
                     <h1>View Current Listing</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, perferendis blanditiis adipisci
