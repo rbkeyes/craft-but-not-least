@@ -1,17 +1,5 @@
 // ❄️ MX: fetch to get USER INFO by user id
 // ❄️ MX: fetch below linked with "./controllers/api/profileRoutes.js"
-const getProfileByID = async () => {
-    const response = await fetch("/api/profile/:id", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      // ...
-      // return;
-    } else {
-      alert(response.statusText);
-    }
-  };
 
   // **rb** this is already in newListing.js **rb**
   // ❄️ MX: fetch to create a new product for user to SELL
@@ -73,10 +61,23 @@ const getProfileByID = async () => {
       alert(response.statusText);
     }
   };
-  ​
+  
+  const updateProfileByID = async () => {
+    const response = await fetch("/api/profile/:id", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      // ...
+      // return;
+    } else {
+      alert(response.statusText);
+    }
+  };
+
   // ❄️ MX: get fetch to work with the button: button name to be filled in
-  document.querySelector("").addEventListener("click", getProfileByID);
-  // document.querySelector("").addEventListener("click", sellProduct);
-  document.querySelector("").addEventListener("click", updateProduct);
-  document.querySelector("").addEventListener("click", deleteProduct);
-  document.querySelector("").addEventListener("click", displayAllByUserID);
+  // document.querySelector("tabs(0)").addEventListener("click", sellProduct);
+  document.querySelector("tabs(1)").addEventListener("click", updateProduct);
+  document.querySelector("tabs(2)").addEventListener("click", deleteProduct);
+  document.querySelector("tabs(3)").addEventListener("click", displayAllByUserID);
+  document.querySelector("tabs(4)").addEventListener("click", updateProfileByID);
