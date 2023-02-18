@@ -4,15 +4,22 @@ const router = require("express").Router();
 const { User, Product } = require("../../models");
 // const withAuth = require('../utils');
 
-// ⤵️ ========test result: 
+// ⤵️ ========test result:
 // get user info by user id(localhost:3001/api/profile/:id)
-router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware 
+router.get("/:id", async (req, res) => {
+  // ⭐️TODO: add auth middleware
   try {
     const userData = await User.findByPk(req.params.id, {
       include: [
         {
           model: Product,
-          attributes: ["id", "product_name", "product_description", "product_price", "product_tag"],
+          attributes: [
+            "id",
+            "product_name",
+            "product_description",
+            "product_price",
+            "product_tag",
+          ],
         },
       ],
     });
@@ -23,7 +30,7 @@ router.get("/:id", async (req, res) => { // ⭐️TODO: add auth middleware
   }
 });
 
-// ⤵️ ========test result: 
+// ⤵️ ========test result:
 // update user info by user id(localhost:3001/api/profile/:id)
 router.put("/:id", async (req, res) => {
   try {
@@ -41,6 +48,9 @@ router.put("/:id", async (req, res) => {
       }
     );
     res.status(200).json(userData);
+    // ⤵️ update user account info from user profile page
+    // ⭐️TODO: add handlebar name in "" once it's created
+    // res.render(" ", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(400).json(err);
   }

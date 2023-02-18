@@ -1,7 +1,7 @@
 <title>Profile Page</title>
 <!-- Style sheet -->
-    <link rel="stylesheet" href="./profile-page.css">
-    <script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./profile-page.css">
+<script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script>
 
 
 <body>
@@ -11,11 +11,11 @@
                 <img src="./bg.jpg " width="200" alt="">
             </div>
             <div class="profile-nav-info">
-              <h3 class="user-name">Brooklynn Mai</h3>
-              <div class="address">
-                <p class="state">New York</p>
-                <span class="country">USA</span>
-              </div>
+                <h3 class="user-name">Brooklynn Mai</h3>
+                <div class="address">
+                    <p class="state">New York</p>
+                    <span class="country">USA</span>
+                </div>
             </div>
             <div class="profile-option">
                 <div class="notifications">
@@ -34,7 +34,9 @@
                     </p>
                     <div class="user-bio">
                         <h3>Bio</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dicta repudiandae blanditiis rem iste numquam velit eligendi illo iure, nisi, libero dolor, laborum error perspiciatis nemo similique. Molestiae, odit debitis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dicta repudiandae blanditiis
+                            rem iste numquam velit eligendi illo iure, nisi, libero dolor, laborum error perspiciatis
+                            nemo similique. Molestiae, odit debitis.</p>
                     </div>
                     <div class="profile-btn">
                         <button class="chatbtn">
@@ -46,7 +48,7 @@
                     </div>
                     <div class="user-rating">
                         <h3 class="rating">4.5</h3>
-                        <div class="rate"> 
+                        <div class="rate">
                             <div class="stars">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -56,35 +58,63 @@
                             <span class="no-user">
                                 <span>123</span>&nbsp;&nbsp;reviews
                             </span>
+                        </div>
                     </div>
+
                 </div>
+            </div>
+            <div class="right-side">
+                <div class="nav">
+                    <ul>
+                        <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
+                        {{!-- ❄️MX: added <a>tag --}}
+                        <a href="/api/sell">
+                            <li onlcick="tabs(1)" class="user-review">Update Listing</li>
+                        </a>
+                        <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
+                        {{!-- ❄️MX: added 2 lists, class not defined in css --}}
+                        <li onlcick="tabs(3)" class="user-displayAll">View Current Listing</li>
+                        <li onlcick="tabs(4)" class="user-update">Update Account Info</li>
 
+                    </ul>
+                </div>
+                <div class="profile-body">
+                    <div class="profile-poststab"></div>
+                    <h1>Create Listing</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo in delectus adipisci asperiores
+                        aliquid recusandae perspiciatis? Iste nihil eius impedit cum, ipsa dolore libero mollitia
+                        voluptatem, repellat inventore a. Dolor.</p>
+                    <div class="profile-reviewstab"></div>
+                    <h1>Update Listing</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae quos minima tenetur repellat dicta
+                        quod dignissimos dolorum facilis? Ab minima, et odio enim labore, unde beatae nisi quis iusto
+                        quasi voluptatibus facere laboriosam recusandae. Odio doloremque id itaque vero illum soluta
+                        nesciunt eaque! Quisquam qui natus, ipsum fugit amet velit tenetur debitis sed, quaerat
+                        recusandae porro ipsa consequatur odio? Commodi voluptatem laborum neque, libero vitae minima
+                        aspernatur! Labore, asperiores autem.</p>
+                    <div class="profile-settingstab"></div>
+                    <h1>Delete Listing</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, perferendis blanditiis adipisci
+                        distinctio porro omnis labore non facere commodi enim? In quasi eos tempore odit rerum neque
+                        earum culpa a.</p>
+                    {{!-- ❄️MX: added 2 divs, class not defined in css --}}
+                    <div class="profile-displayAlltab"></div>
+                    <h1>View Current Listing</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, perferendis blanditiis adipisci
+                        distinctio porro omnis labore non facere commodi enim? In quasi eos tempore odit rerum neque
+                        earum culpa a.</p>
+                    <div class="profile-updatetab"></div>
+                    <h1>Update Account Info</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, perferendis blanditiis adipisci
+                        distinctio porro omnis labore non facere commodi enim? In quasi eos tempore odit rerum neque
+                        earum culpa a.</p>
+                </div>
             </div>
         </div>
-        <div class="right-side">
-            <div class="nav">
-            <ul>
-                <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
-                <li onlcick="tabs(1)" class="user-review">Update Listing</li>
-                <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
-            </ul>
-            </div>
-            <div class="profile-body">
-                <div class="profile-poststab"></div>
-                <h1>Create Listing</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo in delectus adipisci asperiores aliquid recusandae perspiciatis? Iste nihil eius impedit cum, ipsa dolore libero mollitia voluptatem, repellat inventore a. Dolor.</p>
-                <div class="profile-reviewstab"></div>
-                <h1>Update Listing</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae quos minima tenetur repellat dicta quod dignissimos dolorum facilis? Ab minima, et odio enim labore, unde beatae nisi quis iusto quasi voluptatibus facere laboriosam recusandae. Odio doloremque id itaque vero illum soluta nesciunt eaque! Quisquam qui natus, ipsum fugit amet velit tenetur debitis sed, quaerat recusandae porro ipsa consequatur odio? Commodi voluptatem laborum neque, libero vitae minima aspernatur! Labore, asperiores autem.</p>
-                <div class="profile-settingstab"></div>
-                <h1>Delete Listing</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, perferendis blanditiis adipisci distinctio porro omnis labore non facere commodi enim? In quasi eos tempore odit rerum neque earum culpa a.</p>
-            </div>
-        </div>
-    </div>
 
 
-    <script src="./jquery/jquery.js"></script>
-    <script src=".profile.js"></script>
+        <script src="./jquery/jquery.js"></script>
+        <script src=".profile.js"></script>
 </body>
+
 </html>

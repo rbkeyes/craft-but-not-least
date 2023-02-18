@@ -26,7 +26,7 @@ Tag.belongsToMany(Product, {
     foreignKey: 'tag_id',
 });
 
-// ⭐️ TODO: relationship between product image & product
+// ⭐️ TODO - future development: relationship between product image & product
 
 module.exports = {
     Product,
