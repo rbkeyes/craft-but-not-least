@@ -34,7 +34,7 @@ Product.init(
         isDecimal: true,
       },
     },
-    product_tag: { // ⭐️TODO: change the product_tag from number to tag_name(string) in ./seeds/products.json
+    product_tag: { 
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -47,7 +47,7 @@ Product.init(
       },
     },
 
-    // ⭐️ TODO: Add the product_image column
+    // ⭐️TODO - future development: add the product_image column
     // OR a new model for images only/& build relationships in index
     // product_image: {
     // },
