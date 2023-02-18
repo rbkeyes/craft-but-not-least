@@ -64,9 +64,19 @@
         <div class="right-side">
             <div class="nav">
             <ul>
-                <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
-                <li onlcick="tabs(1)" class="user-review">Update Listing</li>
-                <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
+                {{!-- ❄️MX: added link tag with routes for each list --}}
+                <a href="api/sell">
+                    <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
+                </a>
+                
+                <a href="/api/update/product/{{id}}">
+                    <li onlcick="tabs(1)" class="user-review">Update Listing</li>
+                </a>
+                
+                <a href="api/delete/{{id}}">
+                    <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
+                </a>
+                
             </ul>
             </div>
             <div class="profile-body">
