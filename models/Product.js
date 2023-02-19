@@ -34,10 +34,10 @@ Product.init(
         isDecimal: true,
       },
     },
-    product_tag: { 
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    // product_tag: { 
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
