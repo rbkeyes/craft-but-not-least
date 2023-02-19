@@ -10,12 +10,14 @@ const sellItemHandler = async (event) => {
 
   // **rb** fyi I changed to value of the checkboxes to the tag.id
   const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
-  let product_tag = []
+  let tags = []
   console.log(checkbox);
   for (const checked of checkbox) {
     console.log(checked);
-    product_tag.push(checked.value);
+    tags.push(checked.value);
   };
+  const product_tag = tags.toString();
+  console.log(product_tag);
 
 
 try {
