@@ -3,6 +3,7 @@ const Product = require('./Product');
 const Tag = require('./Tag');
 const User = require('./User');
 const ProductTag = require('./ProductTag');
+const Image = require('./Image')
 
 // //  https://sequelize.org/docs/v6/core-concepts/model-basics/
 

@@ -43,7 +43,10 @@ const upload = multer({ storage: storage }).single('image_file');
 // });
 
 router.post('/', async (req, res) => {
-  const product = await Product.create(req.body);
+  const product = await Product.create({
+    ...req.body,
+    user_id: req.session.user_id
+  });
   console.log(product);
   })
 

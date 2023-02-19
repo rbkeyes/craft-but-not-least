@@ -11,12 +11,10 @@ const sellItemHandler = async (event) => {
   // **rb** fyi I changed to value of the checkboxes to the tag.id
   const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
   let tags = []
-  console.log(checkbox);
   for (const checked of checkbox) {
-    console.log(checked);
     tags.push(checked.value);
   };
-  const product_tag = tags.toString();
+  // const product_tag = tags.toString();
   console.log(product_tag);
 
 
@@ -25,7 +23,7 @@ try {
     console.log({ product_name, product_description, product_price, product_tag })
     const response = await fetch('/api/sell', {
       method: 'POST',
-      body: JSON.stringify({ product_name, product_description, product_price, product_tag }),
+      body: JSON.stringify({ product_name, product_description, product_price, ...product_tag }),
       headers: { 'Content-Type': 'application/json' },
     });
 
