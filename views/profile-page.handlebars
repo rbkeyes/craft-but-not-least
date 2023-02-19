@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="./profile-page.css">
 <script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script>
 
-
-<body>
+{{!-- ❄️MX: commented out below --}}
+{{!-- <body> --}}
     <div class="container">
         <div class="profile-header">
             <div class="profile-img">
@@ -68,13 +68,13 @@
                     <ul>
                         <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
                         {{!-- ❄️MX: added <a>tag --}}
-                        <a href="/api/sell">
-                            <li onlcick="tabs(1)" class="user-review">Update Listing</li>
-                        </a>
-                        <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
-                        {{!-- ❄️MX: added 2 lists, class not defined in css --}}
-                        <li onlcick="tabs(3)" class="user-displayAll">View Current Listing</li>
-                        <li onlcick="tabs(4)" class="user-update">Update Account Info</li>
+                            <a href="/api/sell">
+                                <li onlcick="tabs(1)" class="user-review">Update Listing</li>
+                            </a>
+                            <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
+                            {{!-- ❄️MX: added 2 lists, class not defined in css --}}
+                            <li onlcick="tabs(3)" class="user-displayAll">View Current Listing</li>
+                            <li onlcick="tabs(4)" class="user-update">Update Account Info</li>
 
                     </ul>
                 </div>
@@ -113,8 +113,11 @@
         </div>
 
 
+
         <script src="./jquery/jquery.js"></script>
         <script src=".profile.js"></script>
-</body>
 
-</html>
+{{!-- ❄️MX: commented out below --}}
+{{!-- </body>
+
+</html> --}}
