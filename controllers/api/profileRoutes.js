@@ -9,7 +9,9 @@ const { User, Product } = require("../../models");
 router.get("/:id", async (req, res) => {
   // ⭐️TODO: add auth middleware
   try {
-    const userData = await User.findByPk(req.params.id, {
+    conso
+    const userData = await User.findByPk(
+      req.session.id, {
       include: [
         {
           model: Product,
