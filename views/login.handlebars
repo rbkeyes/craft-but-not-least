@@ -29,7 +29,8 @@
             <button class="login-btn" id="signinBtn" type="submit"
             {{!-- ⛔️ **rb** I'm removing this onclick, can update form handler redirect if we want it to go to profile page after login **rb** --}}
               {{!-- onclick="window.location.href = 'profile-page.handlebars'" --}}
-              onclick = " window.location.href = `api/profile/${req.session.id}`"
+              {{!-- TODO: redirect to profile-page --}}
+              onclick = "window.location.href = '/api/profile' "
               >Login</button>
           </div>
           <p><a href="/signup">Don't have an account? Sign up here!</a></p>

@@ -10,11 +10,11 @@ const updateProductRoutes = require('./updateRoutes');
 
 
 router.use('/', userLoginRoutes); // ✅
-router.use('/profile', userProfileRoutes);
-router.use('/buy', buyProductRoutes);
-router.use('/sell', sellProductRoutes); // ✅
-router.use('/delete', deleteProductRoutes); // ✅
-router.use('/update', updateProductRoutes); // ✅
+router.use('/profile', userProfileRoutes); // ✅
+router.use('/buy', buyProductRoutes); // ✅ res data only for now
+router.use('/sell', sellProductRoutes); // ✅ 
+router.use('/delete', deleteProductRoutes); // ✅ res data only for now
+router.use('/update', updateProductRoutes); // ✅ res data only for now
 
 
 

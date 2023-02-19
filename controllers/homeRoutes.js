@@ -17,19 +17,32 @@ router.get("/", async (req, res) => { // TODO: add withAuth
     res.render("homepage", {
       // **rb** commented out some code to allow homepage to render **rb**
       // users,
-      logged_in: req.session.logged_in,
+      // MX: commented out below 021923
+      // logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// ❄️MX: added below for testing only, to render profile page
+// router.get("/profile", async (req, res) => { 
+//   try {
+
+//     res.render("profile-page") 
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
+    // MX: added below 021923
+    res.redirect("/profile")
     return;
   }
-  res.render("login");
+  res.render("login",)//id);
 });
 
 router.get("/signup", (req, res) => {
