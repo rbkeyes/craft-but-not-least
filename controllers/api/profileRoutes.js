@@ -7,11 +7,10 @@ const { User, Product } = require("../../models");
 // ⤵️ ========test result:
 // get user info by user id(localhost:3001/api/profile/:id)
 router.get("/:id", async (req, res) => {
-  // ⭐️TODO: add auth middleware
   try {
-    conso
     const userData = await User.findByPk(
-      req.session.id, {
+      req.params.id, {
+      // req.session.id, {
       include: [
         {
           model: Product,
@@ -26,6 +25,7 @@ router.get("/:id", async (req, res) => {
       ],
     });
     const user = userData.get({ plain: true });
+    // res.status(200).json(userData);
     res.render("profile-page", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);

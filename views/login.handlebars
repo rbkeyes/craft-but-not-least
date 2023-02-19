@@ -1,5 +1,5 @@
 <!-- style sheet-->
-{{!-- <link rel="stylesheet" href="/css/styles.css"> --}}
+<link rel="stylesheet" href="/css/styles.css">
 {{!-- <script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script> --}}
 
 <hero>
@@ -29,6 +29,7 @@
             <button class="login-btn" id="signinBtn" type="submit"
             {{!-- ⛔️ **rb** I'm removing this onclick, can update form handler redirect if we want it to go to profile page after login **rb** --}}
               {{!-- onclick="window.location.href = 'profile-page.handlebars'" --}}
+              onclick = " window.location.href = `api/profile/${req.session.id}`"
               >Login</button>
           </div>
           <p><a href="/signup">Don't have an account? Sign up here!</a></p>

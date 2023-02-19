@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// ⤵️ ========test result: 
+// ⤵️ ========test result: ✅
 // user logout
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
@@ -45,7 +45,7 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// ⤵️ ========test result: ?✅
+// ⤵️ ========test result: ✅
 // user signup
 router.post('/signup', async (req, res) => {
     try {
