@@ -12,7 +12,8 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/api/profile/:id');
+        // ❄️MX: edited below to redirect to profile page
+        document.location.replace('profile/:id');
       } else {
         alert('Failed to log in.');
       }
