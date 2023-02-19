@@ -2,7 +2,7 @@
 // for user to listing and sell products
 const router = require("express").Router();
 const path = require('path');
-const { Product, Image } = require("../../models");
+const { Product, Image, ProductTag } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 // **rb** I wasn't sure if there was a better place to put storage and upload - maybe in a helper file?
@@ -43,24 +43,45 @@ const upload = multer({ storage: storage }).single('image_file');
 // });
 
 router.post('/', async (req, res) => {
-  const product = await Product.create({
-    ...req.body,
-    user_id: req.session.user_id
-  });
-  console.log(product);
-  })
+  try {
+    // create new product from req.body and user_id (from logged in user)
+    const product = await Product.create({
+      ...req.body,
+      user_id: req.session.user_id
+    });
+    // if there are tags, map array return object with product_id and tag_id 
+    if (!req.body.tagIds.length) {
+      // if no product tags, just respond
+    res.status(200).json(product);
+    } 
+      const tagIdArr = req.body.tagIds.map((tag_id) => {
+        return {
+          product_id: product.id,
+          tag_id,
+        };
+      });
+      // bulk create ProductTag using array of objects created above
+      const newProductTags = await ProductTag.bulkCreate(tagIdArr);
+      res.status(200).json(newProductTags);    
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+
 
 router.post('/upload', upload, async (req, res) => {
   try {
     console.log(req.file);
     const newImage = Image.create({
       file_name: req.file.filename,
-      path: req.file.path 
+      path: req.file.path
     });
     console.log(newImage);
   } catch (err) {
     console.error(err);
-  }  
+  }
 });
 
 
