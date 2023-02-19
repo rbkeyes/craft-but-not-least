@@ -13,8 +13,8 @@ const loginFormHandler = async (event) => {
       console.log(response);
   
       if (response.ok) {
-        console.log('logged in')
-        document.location.replace('/');
+        // ❄️MX: edited below to redirect to profile page
+        document.location.replace('profile/:id');
       } else {
         alert('Failed to log in.');
       }
