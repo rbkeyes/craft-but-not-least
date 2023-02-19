@@ -55,6 +55,15 @@ Product.belongsTo(User, {
   }
   });
 
+  Product.hasMany(Image, {
+    foreignKey: 'image_id',
+    onDelete: 'CASCADE'
+});
+
+Image.belongsTo(Product, {
+    foreignKey: "image_id",
+});
+
 
 // ⭐️ TODO - future development: relationship between product image & product
 
