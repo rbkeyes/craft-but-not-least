@@ -1,5 +1,4 @@
-​
-# Craft But Not Least
+​# Craft But Not Least
 
 ​[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![GitHub language count](https://img.shields.io/github/languages/count/rbkeyes/team-profile-generator?color=magenta)
@@ -18,6 +17,7 @@ Many individuals in the Maker community have collected spare supplies that they 
 - [Technologies](#technologies)
 - [Installation](#installation)
 - ​[Usage](#usage)
+- [Tests](#tests)
 - [License](#license)
 - [Credits](#credits)
 - [References](#references)
@@ -51,6 +51,7 @@ To install this application, you must have [node.js](https://nodejs.org/en/) ins
 
 The package.json contains the dependencies needed to run this application. To install, run command `npm i` or `npm install` in the command line of your integrated terminal. 
 ​
+<!-- there are no tests associated with this -->
 With the package.json file, use jest to excute the tests in the terminal by the following command:
 ```
 npm i
