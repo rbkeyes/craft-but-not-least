@@ -17,7 +17,7 @@ router.get("/", async (req, res) => { // TODO: add withAuth
     res.render("homepage", {
       // **rb** commented out some code to allow homepage to render **rb**
       // users,
-      logged_in: req.session.logged_in,
+      logged_in: loginStatus,
     });
   } catch (err) {
     res.status(500).json(err);
