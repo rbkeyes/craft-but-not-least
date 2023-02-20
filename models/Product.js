@@ -34,6 +34,7 @@ Product.init(
         isDecimal: true,
       },
     },
+    // **rb** joined through ProductTag, don't need product_tag column
     // product_tag: { 
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
