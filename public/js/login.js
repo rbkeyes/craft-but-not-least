@@ -11,7 +11,8 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    // ❄️MX: added below to redirect to profile page
+    // ❄️MX: onclick function on login button, redirect to profile page only 
+    // ⚠️will affect on sell page when required login
     // const profilePage = document.getElementById('signinBtn');
     // profilePage.addEventListener('click', function () {
     //   window.location.href = `api/profile/${req.session.id}`
