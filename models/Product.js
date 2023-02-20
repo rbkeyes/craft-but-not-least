@@ -34,10 +34,11 @@ Product.init(
         isDecimal: true,
       },
     },
-    product_tag: { 
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    // **rb** joined through ProductTag, don't need product_tag column
+    // product_tag: { 
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

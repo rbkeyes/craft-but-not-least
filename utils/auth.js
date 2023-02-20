@@ -10,14 +10,6 @@ const withAuth = (req, res, next) => {
   }
 };
 
-// const sellWithAuth = (req, res, next) => {
-//   if (!req.session.logged_in) {
-//     res.redirect("/sell");
-//   } else {
-//     next();
-//   }
-// };
-
 module.exports = withAuth;
 
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨

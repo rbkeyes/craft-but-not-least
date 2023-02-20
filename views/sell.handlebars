@@ -1,14 +1,28 @@
-<h2>Add an item</h2>
+<hero>
+  <img src="/images/loginBackground.png" alt="yarns and threads"/>
+</hero>
+
+
+  
+
 <!-- **rb** removed disabled from input to see if I can get it to work **rb** -->
-<form action="/api/sell/upload" enctype="multipart/form-data" method="post" >
+<div class="login-container">
+  <div class="login">
+    
+      <div class="login-card" >
+    <h2>Add an item</h2>
+<section class="sell-upload">
+    <form action="/api/sell/upload" enctype="multipart/form-data" method="post" >
     <div class="form-group">
         <label for="image-upload">Upload an image for your listing:</label>
         <input type="file" class="form-control-file" name="image_file">
         <input type="submit" value="upload image" class="btn btn-default">
     </div>
-</form>
+    </form>
+</section>
 
-<form class="form submit-form" id="sell-item-form">
+<section>
+    <form class="form submit-form" id="sell-item-form">
 <!-- item name input -->
 
     <div class="form-group">
@@ -30,7 +44,7 @@
     <div class="form-group product-tags">
         <label for="tags">Tags:</label>
         <!-- add checkboxes with tags from partial -->
-        <div class="form-check tag-select">
+        <div class="form-check tag-select" id="sell-checklist">
             <!-- add checkboxes with tags from partial -->
             {{#each tags as |tag|}}
             {{> item-tags}}
@@ -43,6 +57,13 @@
     <div class="form-group">
         <button class="btn btn-primary" type="submit">submit</button>
     </div>
-</form>
+    </form>
+</section>
+</div>
+</div>
+</div>
+
+    
+
 
 <script src="./js/sell.js"></script>
