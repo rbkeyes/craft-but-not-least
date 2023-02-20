@@ -1,4 +1,5 @@
-​# Craft But Not Least
+​
+# Craft But Not Least
 
 ​[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![GitHub language count](https://img.shields.io/github/languages/count/rbkeyes/team-profile-generator?color=magenta)
@@ -17,7 +18,6 @@ Many individuals in the Maker community have collected spare supplies that they 
 - [Technologies](#technologies)
 - [Installation](#installation)
 - ​[Usage](#usage)
-- [Tests](#tests)
 - [License](#license)
 - [Credits](#credits)
 - [References](#references)
@@ -47,19 +47,16 @@ Many individuals in the Maker community have collected spare supplies that they 
 ​
 ## Installation
 ​
-To install this application, you must have [node.js](https://nodejs.org/en/) installed on your computer.
+No installation necessary to use the deployed web application.
 
+For development, you must have [node.js](https://nodejs.org/en/) installed on your computer.
 
-The package.json contains the dependencies needed to run this application. To install, run command 
+The package.json contains the dependencies needed to run this application. To install, run command `npm i` or `npm install` in the command line of your integrated terminal. 
+​
+With the package.json file, use jest to excute the tests in the terminal by the following command:
 ```
 npm i
-``` 
-or 
 ```
-npm install
-``` 
-in the command line of your integrated terminal. 
-
 ​
 For npm scripts:
 ```
@@ -70,7 +67,19 @@ For npm scripts:
   }
 ```
 ## Usage
+
+Upon navigation to the application, user will be presented with the homepage. User will be prompted to log in, or sign up, before navigating to other pages of the application. After login, user is redirected to the user profile page (NOTE: This route is not complete at this time, redirects back to homepage for now).
+
+To list an item for sale, user selects "Sell" from the navigation bar, completes form, and clicks "submit". (NOTE: Image upload feature is not complete. Current status is successful upload to disk storage in dev environment, need to explore alternative storage for deployed application. Model and relationship of image to product are not functional at this time).
+
+To view all items for sale from a specific category, select the card on the homepage for that category (NOTE: template for product cards not complete, products do not render when category card selected).
+
+Select the "view all items" button at the bottom of the page to view all items for sale. (NOTE: sample products populate. Template and routes to dynamically generate product cards does not exist at this time, examples are hardcoded.)
+
+Select "Logout" from the nav bar to logout.
 ​
+**Development:**
+
 To excute MySQL shell in the terminal by the following command:
 ```
 mysql -u root
@@ -95,10 +104,6 @@ Or
 ```
 npm start
 ```
-
-## Tests
-
-There are no tests written for this application at this time.
 
 ## License
 
@@ -140,11 +145,22 @@ Documentation for [sequelize](https://sequelize.org/docs/v6/core-concepts/model-
 ​
 ## Directions for Future Development
 ​
-- Upload and store image files for products to be displayed on product tags
-    - Currently the file uploads are not linked properly with the product listing. Need to update route and public .js to accomplish this. 
-    - During dev files were storing to disk storage. We are looking into cloud storage options for deployed application.
+- Complete routes and handlebars templates needed to dynamically generate category and product cards.
+    - Category cards and sample product cards are currently hardcoded.
+    - Link to email seller on product card.
+    - Some routes exist, but need to link with template code when complete and test.
+- User profile page complete with user photo upload .
+- Upload and store image files for products to be displayed on product tags.
+    - Currently the file uploads are not being stored in database. Need to update route and public .js to accomplish this. 
+    - Create relationship between Image and Product so that Image can be displayed with the product it belongs to.
+    - During dev files are storing to disk storage. We are looking into cloud storage options for deployed application but didn't have time to figure it out.
 - Finish building out the UI:
     - Homepage with dynamically created category cards (currently hard-coded).
     - Product page to view more details about product listing, including option to contact seller directly.
     - User profile page where sellers can view, edit, and delete their listings, as well as their account.
     - Fine-tune the styling to be clean and consistent throughout the application.
+
+## Contact
+
+Have questions? Contact me on [GitHub](https://github.com/rbkeyes).   
+Or [email me](mailto:rbkeyes@gmail.com).
