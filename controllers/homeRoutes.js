@@ -39,10 +39,10 @@ router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
     // MX: added below 021923
-    res.redirect("/profile")
+    // res.redirect("/profile")
     return;
   }
-  res.render("login",)//id);
+  res.render("login")
 });
 
 router.get("/signup", (req, res) => {
