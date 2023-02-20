@@ -13,6 +13,8 @@
 
 Many individuals in the Maker community have collected spare supplies that they no longer use. Likewise, for Makers who are interesting in purchasing supplies secondhand, it can be challenging to find what they are looking for. We were motivated to create this application to fill a need in the Maker community.  A platform for Makers to connect with each other to buy, sell or trade their secondhand craft supplies and tools. A place for Makers to support, and supply, each other! 
 
+![Screenshot](./assets/images/craft-but-not-least.herokuapp.com_.png)
+
 
 ## Table of Contents
 - [Technologies](#technologies)
