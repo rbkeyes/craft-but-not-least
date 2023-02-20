@@ -166,5 +166,5 @@ Documentation for [sequelize](https://sequelize.org/docs/v6/core-concepts/model-
 
 ## Contact
 
-Have questions? Contact me on [GitHub](https://github.com/rbkeyes).   
+Have questions? Contact [me](https://github.com/rbkeyes) or one of my [collaborators](#credits) on GitHub.   
 Or [email me](mailto:rbkeyes@gmail.com).
