@@ -221,3 +221,15 @@ input{
   border-radius: 7px;
   padding: 10px;
 }
+
+@media screen and (max-width: 1020px) {
+  .card {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
