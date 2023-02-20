@@ -52,7 +52,7 @@ router.get('/sell', withAuth, async (req, res) => {
     };
     // if getting all: map array then get({plain: true}) before rendering
     const tags = tagsData.map((tag) => tag.get({ plain: true }));
-    console.log(tags);
+    // console.log(tags);
     // render form with tags
     res.render('sell', { 
       image_path: null,
