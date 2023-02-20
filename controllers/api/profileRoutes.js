@@ -2,16 +2,15 @@
 // for user profile page: edit user info, create a new listing, edit a listing, delete a listing, contact seller
 const router = require("express").Router();
 const { User, Product } = require("../../models");
-// const withAuth = require('../utils');
+const withAuth = require('../../utils/auth');
 
 // ⤵️ ========test result:
 // get user info by user id(localhost:3001/api/profile/:id)
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   // ⭐️TODO: add auth middleware
   try {
-    conso
     const userData = await User.findByPk(
-      req.session.id, {
+      req.session.user_id, {
       include: [
         {
           model: Product,
