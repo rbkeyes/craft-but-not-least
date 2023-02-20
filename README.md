@@ -128,7 +128,7 @@ This application was built in collaboration with:
     - login/logout HTML & styling
     - profile page template
     - file upload using multer package
-- [Reed Keyes](https://github.com/rbkeyes)
+- and myself: [Reed Keyes](https://github.com/rbkeyes)
     - repo owner and project manager
     - new-listing template, routes, and form handler
     - form handler for login/signup/logout
