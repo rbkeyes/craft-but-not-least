@@ -77,6 +77,28 @@ router.get('/sell', withAuth, async (req, res) => {
   }
 });
 
+// ❄️MX: temp route for rendering sell page
+router.get('/sell', async (req, res) => {
+  try {
+    res.render('sell', {
+      image_path: null,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ❄️MX: temp route for rendering profile page
+router.get('/profile', async (req, res) => {
+  try {
+    res.render('profile-page', {
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
