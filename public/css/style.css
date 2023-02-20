@@ -55,7 +55,7 @@
   }
   
   nav a {
-    color: var(--light);
+    color: var(--dark);
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
