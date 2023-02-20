@@ -67,7 +67,11 @@ router.get("/tag", async (req, res) => {
 
     const tags = tagData.map((tag) => tag.get({ plain: true }));
     // res.json(tags);
-    res.render("tags");
+    res.render("tags", { 
+      // image_path: null,
+      // tags, 
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     // console.log("@@@", err);
     res.status(500).json(err);

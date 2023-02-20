@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
   
       if (response.ok) {
         // reroute to home
-        document.location.replace('/api/profile/:id');
+        document.location.replace('/');
         console.log(`${name} successfully created an account.`)
       } else {
         alert('Failed to sign up.');
