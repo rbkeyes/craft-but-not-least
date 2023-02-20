@@ -8,7 +8,7 @@
 ​
 ## Description
 
-Craft But Not Least is a full-stack web application that allows users to create an account, login, create listings for and purchase or trade craft supplies and tools directly from other users.
+[Craft But Not Least](https://craft-but-not-least.herokuapp.com/) is a full-stack web application that allows users to create an account, login, create listings for and purchase or trade craft supplies and tools directly from other users.
 ​
 
 Many individuals in the Maker community have collected spare supplies that they no longer use. Likewise, for Makers who are interesting in purchasing supplies secondhand, it can be challenging to find what they are looking for. We were motivated to create this application to fill a need in the Maker community.  A platform for Makers to connect with each other to buy, sell or trade their secondhand craft supplies and tools. A place for Makers to support, and supply, each other! 
@@ -48,6 +48,8 @@ Many individuals in the Maker community have collected spare supplies that they 
 ## Installation
 ​
 No installation necessary to use the deployed web application.
+
+GitHub repository can be found [here](https://github.com/rbkeyes/craft-but-not-least).
 
 For development, you must have [node.js](https://nodejs.org/en/) installed on your computer.
 
