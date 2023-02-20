@@ -49,13 +49,17 @@ Many individuals in the Maker community have collected spare supplies that they 
 ​
 To install this application, you must have [node.js](https://nodejs.org/en/) installed on your computer.
 
-The package.json contains the dependencies needed to run this application. To install, run command `npm i` or `npm install` in the command line of your integrated terminal. 
-​
-<!-- there are no tests associated with this -->
-With the package.json file, use jest to excute the tests in the terminal by the following command:
+
+The package.json contains the dependencies needed to run this application. To install, run command 
 ```
 npm i
+``` 
+or 
 ```
+npm install
+``` 
+in the command line of your integrated terminal. 
+
 ​
 For npm scripts:
 ```
@@ -91,6 +95,10 @@ Or
 ```
 npm start
 ```
+
+## Tests
+
+There are no tests written for this application at this time.
 
 ## License
 
