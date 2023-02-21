@@ -34,7 +34,7 @@ const upload = multer({ storage: storage }).single('image_file');
 //       message: "Product has been successfully added!",
 //       product: req.body,
 //     });
-//     res.render('new-listing');
+//     res.render('sell');
 //     // ⭐️TODO: add login session once login is working⤵️
 //     // res.render('new-Product', { products, logged_in: req.session.logged_in });
 //   } catch (err) {
