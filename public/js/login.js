@@ -21,7 +21,8 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // profilePage();
-      window.location.href = `api/profile/${req.session.id}`;
+      // window.location.href = `api/profile/${req.session.id}`;
+      document.location.replace('/')
     } else {
       // console.error(response.statusText);
       alert("Failed to log in.");
