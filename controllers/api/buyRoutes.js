@@ -2,11 +2,11 @@
 // for user to buy products and contact seller
 const router = require("express").Router();
 const { Product, User, Tag, ProductTag } = require("../../models");
-// const withAuth = require('../utils');
+const withAuth = require('../../utils/auth');
 
 // ⤵️ ======== ✅test result: 200 ok ========
 // get all products (localhost:3001/api/buy/product)
-router.get("/product", async (req, res) => {
+router.get("/product", withAuth, async (req, res) => {
   // ⭐️TODO: add withAuth&render
   try {
     const productData = await Product.findAll({
