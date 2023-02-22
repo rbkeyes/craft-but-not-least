@@ -29,7 +29,7 @@ try {
 
     if (response.ok) {
       console.log('Success!')
-      document.location.replace('/');
+      document.location.replace('/api/buy/product');
       // route to ?? page after POST
       return;
     }
