@@ -72,13 +72,11 @@ For npm scripts:
 ```
 ## Usage
 
-Upon navigation to the application, user will be presented with the homepage. User will be prompted to log in, or sign up, before navigating to other pages of the application. After login, user is redirected to the user profile page (NOTE: This route is not complete at this time, redirects back to homepage for now).
+Upon navigation to the application, user will be presented with the homepage. User will be prompted to log in, or sign up, before navigating to other pages of the application. After login, user is redirected to the home page.
 
 To list an item for sale, user selects "Sell" from the navigation bar, completes form, and clicks "submit". (NOTE: Image upload feature is not complete. Current status is successful upload to disk storage in dev environment, need to explore alternative storage for deployed application. Model and relationship of image to product are not functional at this time).
 
-To view all items for sale from a specific category, select the card on the homepage for that category (NOTE: template for product cards not complete, products do not render when category card selected).
-
-Select the "view all items" button at the bottom of the page to view all items for sale. (NOTE: sample products populate. Template and routes to dynamically generate product cards does not exist at this time, examples are hardcoded.)
+To view all items for sale in the database, select "Buy" from the navigation bar in the header, or the "View all items" button at the bottom of the page (NOTE: the ability to view products by tag is not available at this time).
 
 Select "Logout" from the nav bar to logout.
 ​
@@ -149,12 +147,7 @@ Documentation for [sequelize](https://sequelize.org/docs/v6/core-concepts/model-
 ​
 ## Directions for Future Development
 ​
-- Complete routes and handlebars templates needed to dynamically generate category and product cards.
-    - Category cards and sample product cards are currently hardcoded.
-    - Link to email seller on product card.
-    - Some routes exist, but need to link with template code when complete and test.
-- User profile page complete with user photo upload .
-- Upload and store image files for products to be displayed on product tags.
+- Upload and store image files for products to be displayed on product tags:
     - Currently the file uploads are not being stored in database. Need to update route and public .js to accomplish this. 
     - Create relationship between Image and Product so that Image can be displayed with the product it belongs to.
     - During dev files are storing to disk storage. We are looking into cloud storage options for deployed application but didn't have time to figure it out.
@@ -162,6 +155,7 @@ Documentation for [sequelize](https://sequelize.org/docs/v6/core-concepts/model-
     - Homepage with dynamically created category cards (currently hard-coded).
     - Product page to view more details about product listing, including option to contact seller directly.
     - User profile page where sellers can view, edit, and delete their listings, as well as their account.
+    - Add photos to product cards using db data.
     - Fine-tune the styling to be clean and consistent throughout the application.
 
 ## Contact
