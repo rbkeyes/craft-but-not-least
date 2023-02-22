@@ -76,29 +76,7 @@ router.get("/signup", (req, res) => {
 //   }
 // });
 
-<<<<<<< HEAD
-    // 404 if nothing found
-    if (!tagsData) {
-      res.status(404).json('No tags found');
-    };
-    // if getting all: map array then get({plain: true}) before rendering
-    const tags = tagsData.map((tag) => tag.get({ plain: true }));
-    // console.log(tags);
-    // render form with tags
-    res.render('sell', { 
-      image_path: null,
-      tags, 
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// ❄️MX: temp route for rendering sell page
-=======
 // ❄️MX: temp route for rendering sell page (sell page will require login)
->>>>>>> b96f0c4 (to render profile-page & sell page, edited login&progifle-page handlebars, homeRoutes.js)
 router.get('/sell', async (req, res) => {
   try {
     res.render('sell', {
