@@ -23,18 +23,18 @@ const upload = multer({ storage: storage }).single('image_file');
 
 // ⤵️============ ✅tested with json object input: 200 ok =================
 // create a new product to sell ((localhost:3001/api/sell)
-// router.post("/", async (req, res) => {
+// router.post("/", withAuth, async (req, res) => {
 //   try {
 //     const newProduct = await Product.create({
 //       ...req.body,
-//       // user_id: req.session.user_id,
+//       user_id: req.session.user_id,
 //     });
 //     // comment out below after login is working
-//     // res.status(200).json({
-//     //   message: "Product has been successfully added!",
-//     //   product: req.body,
-//     // });
-//     res.render('sell');
+//     res.status(200).json({
+//       message: "Product has been successfully added!",
+//       product: req.body,
+//     });
+//     res.render('new-listing');
 //     // ⭐️TODO: add login session once login is working⤵️
 //     // res.render('new-Product', { products, logged_in: req.session.logged_in });
 //   } catch (err) {
@@ -63,7 +63,6 @@ router.post('/', withAuth, async (req, res) => {
       });
       // bulk create ProductTag using array of objects created above
       const newProductTags = await ProductTag.bulkCreate(tagIdArr);
-
       res.status(200).json(newProductTags);    
   } catch (err) {
     console.log(err);

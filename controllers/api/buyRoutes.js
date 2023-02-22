@@ -7,12 +7,13 @@ const { Product, User, Tag, ProductTag } = require("../../models");
 // ⤵️ ======== ✅test result: 200 ok ========
 // get all products (localhost:3001/api/buy/product)
 router.get("/product", async (req, res) => {
+  // ⭐️TODO: add withAuth&render
   try {
     const productData = await Product.findAll({
       include: [
         {
           model: User,
-          attributes: ["email"],
+          attributes: ["name"],
         },
         {
           model: Tag,
@@ -22,9 +23,9 @@ router.get("/product", async (req, res) => {
     });
     const products = productData.map((product) => product.get({ plain: true }));
     // comment out below after login is working
-    // res.json(products);
-    
-    res.render('all-products', { products, logged_in: req.session.logged_in });
+    res.json(products);
+    // ⤴️⚠️⤵️ to run the server needs to comment out this below first, after finished loggin session comment back ⚠️
+    // res.render('all-products', { products, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
