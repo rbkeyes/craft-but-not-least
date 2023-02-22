@@ -5,27 +5,30 @@ const { User, Product } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 // ⤵️ ========test result:
-// get user info by user id(localhost:3001/api/profile/:id)
-router.get("/:id", withAuth, async (req, res) => {
-  // ⭐️TODO: add auth middleware
+// get user info by user id(localhost:3001/profile/:id)
+// router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const userData = await User.findByPk(
-      req.session.user_id, {
-      include: [
-        {
-          model: Product,
-          attributes: [
-            "id",
-            "product_name",
-            "product_description",
-            "product_price",
-            "product_tag",
-          ],
-        },
-      ],
-    });
-    const user = userData.get({ plain: true });
-    res.render("profile-page", { user, logged_in: req.session.logged_in });
+    // const userData = await User.findByPk(
+    //   req.params.id, {
+    //   // req.session.id, {
+    //   include: [
+    //     {
+    //       model: Product,
+    //       attributes: [
+    //         "id",
+    //         "product_name",
+    //         "product_description",
+    //         "product_price",
+    //         "product_tag",
+    //       ],
+    //     },
+    //   ],
+    // });
+    // const user = userData.get({ plain: true });
+    // res.status(200).json(userData);
+    res.render("profile-page");
+    // res.render("profile-page", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
