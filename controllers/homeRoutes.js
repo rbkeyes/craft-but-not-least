@@ -10,10 +10,9 @@ router.get("/", async (req, res) => { // TODO: add withAuth
     // const userData = await User.findAll({
     //   attributes: { exclude: ["password"] },
     //   order: [["name", "ASC"]],
-      
     // });
     // const users = userData.map((user) => user.get({ plain: true }));
-
+    await req.session.logged_in;
     res.render("homepage", {
       // **rb** commented out some code to allow homepage to render **rb**
       // users,
