@@ -13,7 +13,7 @@ router.get("/product", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["email"],
         },
         {
           model: Tag,
@@ -23,9 +23,9 @@ router.get("/product", async (req, res) => {
     });
     const products = productData.map((product) => product.get({ plain: true }));
     // comment out below after login is working
-    res.json(products);
+    // res.json(products);
     // ⤴️⚠️⤵️ to run the server needs to comment out this below first, after finished loggin session comment back ⚠️
-    // res.render('all-products', { products, logged_in: req.session.logged_in });
+    res.render('all-products', { products, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
