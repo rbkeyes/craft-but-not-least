@@ -1,11 +1,12 @@
 {{!-- ❄️mx: todo: check the class for css style --}}
 <section class="product-card">
-  <div id={{id}}>
+  <div id="{{id}}">
   <img src="/images/placeholder.png" alt="place-holder-img">
     <h3>{{{product_name}}}</h3>
     <p>{{{product_description}}}</p>
-    <p>{{{product_price}}}</p>
-    <p>Contact: <a href="mailto:{{email}}">{{{email}}}</a></p>
+    <p>${{{product_price}}}</p>
+    {{!-- <p>{{{tag.tag_name}}}</p> --}}
+    <p>Contact: <a href="mailto:{{user.email}}">{{{user.email}}}</a></p>
   </div>
   </section>
 {{!-- ❄️mx --}}
