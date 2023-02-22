@@ -34,11 +34,12 @@ router.get("/", async (req, res) => { // TODO: add withAuth
 //   }
 // });
 
+// ========= GET for login & logout =========
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     // ❄️MX: temporarily added line 42 to render profile page
     // res.redirect("/");
-    res.redirect("/profile")
+    res.redirect("/")
     return;
   }
   res.render("login")
@@ -52,7 +53,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// ❄️MX: temporarily commented out, see router.get('/sell') below line 80
+// ❄️MX: temporarily commented out, see router.get('/sell') in the next section
 // router.get('/sell', withAuth, async (req, res) => {
 //   try {
 //     // get tag names from db
@@ -77,27 +78,27 @@ router.get("/signup", (req, res) => {
 // });
 
 // ❄️MX: temp route for rendering sell page (sell page will require login)
-router.get('/sell', async (req, res) => {
-  try {
-    res.render('sell', {
-      image_path: null,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/sell', async (req, res) => {
+//   try {
+//     res.render('sell', {
+//       image_path: null,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // ❄️MX: temp route for rendering profile page
-router.get('/profile', async (req, res) => {
-  try {
-    res.render('profile-page', {
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/profile', async (req, res) => {
+//   try {
+//     res.render('profile-page', {
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
 // ☆•:*´¨`*:•.☆•:*´¨`*:•.Mengxue☆•:*´¨`*:•.☆•:*´¨`*:•.☆•:*´¨
