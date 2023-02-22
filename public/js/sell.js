@@ -29,8 +29,7 @@ try {
 
     if (response.ok) {
       console.log('Success!')
-      alert('New listing created!');
-      document.location.replace('/api/buy/product');
+      document.location.replace('/');
       // route to ?? page after POST
       return;
     }

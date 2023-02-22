@@ -39,8 +39,6 @@ Product.init(
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
     // },
-
-    // ❄️MX: user_id is null when post a sell
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
