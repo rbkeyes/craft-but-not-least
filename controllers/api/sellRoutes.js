@@ -42,12 +42,13 @@ const upload = multer({ storage: storage }).single('image_file');
 //   }
 // });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     // create new product from req.body and user_id (from logged in user)
     const product = await Product.create({
       ...req.body,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
+      logged_in: req.session.logged_in
     });
     // if there are tags, map array return object with product_id and tag_id 
     if (!req.body.tagIds.length) {
