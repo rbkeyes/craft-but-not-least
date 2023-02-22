@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Sell Exchange Craft Supplies</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
+  {{!--
+  <link rel="stylesheet" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="/css/style.css">
-  {{!-- <link rel="stylesheet" href="/css/styles.css"> --}}
+  {{!--
+  <link rel="stylesheet" href="/css/styles.css"> --}}
 </head>
 
 <body>
@@ -22,20 +24,22 @@
       {{!-- ❄️MX: changed href from / to /api/buy/product --}}
       <a href="/api/buy/product">Buy</a>
       <a href="/sell">Sell</a>
-    {{#if logged_in}}
+
+{{#if logged_in}}
     <a href="#" id="logout">Logout</a>
     {{else}}
     <a href="/login" id="login">Login</a>
 
     {{/if}}
+
     </nav>
-    
+
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
   <footer>
-      
+
   </footer>
 
   <!-- Only include the logout script if the user is logged in -->

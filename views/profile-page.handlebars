@@ -3,8 +3,10 @@
 <link rel="stylesheet" href="./profile-page.css">
 <script src="https://kit.fontawesome.com/7bcd3cd1a7.js" crossorigin="anonymous"></script>
 
+{{!-- ❄️MX: commented out below --}}
+{{!--
 
-<body>
+<body> --}}
     <div class="container">
         <div class="profile-header">
             <div class="profile-img">
@@ -66,15 +68,20 @@
             <div class="right-side">
                 <div class="nav">
                     <ul>
-                        <li onlick="tabs(0)" class="user-postactive">Create Listing</li>
-                        {{!-- ❄️MX: added <a>tag --}}
-                        <a href="/api/sell">
+                        {{!-- ❄️MX: added <a>tag to direct to sell page --}}
+                            <a href="/sell">
+                                {{!-- ❄️MX: edited style --}}
+                                <li onlick="tabs(0)" class="user-postactive" style="color:rgb(55, 118, 152)">
+                                    <strong>
+                                        Create Listing
+                                    </strong>
+                                </li>
+                            </a>
                             <li onlcick="tabs(1)" class="user-review">Update Listing</li>
-                        </a>
-                        <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
-                        {{!-- ❄️MX: added 2 lists, class not defined in css --}}
-                        <li onlcick="tabs(3)" class="user-displayAll">View Current Listing</li>
-                        <li onlcick="tabs(4)" class="user-update">Update Account Info</li>
+                            <li onlcick="tabs(2)" class="user-setting">Delete Listing</li>
+                            {{!-- ❄️MX: added 2 lists, class not defined in css --}}
+                            <li onlcick="tabs(3)" class="user-displayAll">View Current Listing</li>
+                            <li onlcick="tabs(4)" class="user-update">Update Account Info</li>
 
                     </ul>
                 </div>
@@ -113,8 +120,15 @@
         </div>
 
 
+
         <script src="./jquery/jquery.js"></script>
         <script src=".profile.js"></script>
+        {{!-- ❄️MX: fetch methods --}}
+        {{!-- 
+        <script src="userProfile.js"></script> --}}
+
+        {{!-- ❄️MX: commented out below --}}
+        {{!--
 </body>
 
-</html>
+</html> --}}

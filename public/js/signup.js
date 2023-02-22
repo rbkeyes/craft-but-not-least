@@ -17,7 +17,7 @@ const signupFormHandler = async (event) => {
         document.location.replace('/');
         console.log(`${name} successfully created an account.`)
       } else {
-        alert('Failed to sign up.');
+        alert('Failed to sign up (password length must be 8).');
       }
     }
   };
