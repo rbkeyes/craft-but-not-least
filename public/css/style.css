@@ -76,6 +76,14 @@
     border-top: 5px double var(--dark);
     border-bottom: 5px double var(--dark);
   }
+
+  footer {
+    display: inline-block;
+    padding: 40px;
+    text-align: center;
+    background: var(--secondary);
+    color: var(--dark);
+  }  
   
 .btn {
     border-radius: 16px;
@@ -92,6 +100,11 @@ img {
     object-fit: cover;
   }
 
+#view-all-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .login-container {
   width: 100%;
@@ -130,7 +143,7 @@ input{
   }
 
   .product-card {
-    width: 50%;
+    width: 20%;
     margin: 20px;
     padding: 10px;
     display: block;
@@ -206,6 +219,12 @@ input{
     flex-flow: row wrap;
     justify-content: center;
   }
+
+.view-all {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
   /*Form inputs  */
 #email-login,
 #password-login,
@@ -233,3 +252,14 @@ input{
     width: 40%;
   }
 }
+ @media screen and (max-width: 1399px) {
+  .product-card {
+    width: 40%;
+  }
+ }
+
+ @media screen and (max-width: 775px) {
+  .product-card {
+    width: 80%;
+  }
+ }
